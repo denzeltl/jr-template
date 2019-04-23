@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Template</title>
+        <link
+            rel="stylesheet"
+            href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+            integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+            crossorigin="anonymous"
+        />
+        <link
+            rel="stylesheet"
+            type="text/css"
+            media="screen"
+            href="css/tailwind.css"
+        />
+        <link
+            rel="stylesheet"
+            type="text/css"
+            media="screen"
+            href="css/main.css"
+        />
+        <!-- <link rel="stylesheet" href="css/debug.css" /> -->
+    </head>
+    <body class="bg-gray-200 text-gray-700">
+        <!-- TABS -->
+        <ul class="list-reset flex border-b bg-gray-400">
+            <li class="-mb-px mr-1">
+                <a
+                    class="bg-gray-200 inline-block border-l border-t border-r rounded-t py-2 px-4 text-gray-700 font-semibold"
+                    href="#"
+                >
+                    New Matter
+                </a>
+            </li>
+            <li class="mr-1">
+                <a
+                    class="bg-white inline-block py-2 px-4 text-gray-500 hover:text-gray-700 font-semibold"
+                    href="#"
+                >
+                    <i class="fas fa-plus"></i>
+                </a>
+            </li>
+        </ul>
+
+        <!-- EDIT BOX - Lender -->
+        <section
+            id="edit-box-lender"
+            class="flex flex-col justify-between bg-gray-400 max-w-full h-auto m-4 rounded shadow-md"
+        >
+            <!-- nav circles -->
+            <div class="m-4 px-4 w-full mx-auto relative">
+                <ul class="flex justify-between mr-10">
+                    <li class="rounded-full bg-gray-400 h-8 w-8 mx-1"></li>
+                    <li class="rounded-full bg-gray-400 h-8 w-8 mx-1"></li>
+                    <li class="rounded-full bg-gray-400 h-8 w-8 mx-1"></li>
+                    <li class="rounded-full bg-gray-400 h-8 w-8 mx-1"></li>
+                    <li class="rounded-full bg-gray-400 h-8 w-8 mx-1"></li>
+                    <li class="rounded-full bg-gray-400 h-8 w-8 mx-1"></li>
+                    <li class="rounded-full bg-gray-400 h-8 w-8 mx-1"></li>
+                    <li class="rounded-full bg-gray-400 h-8 w-8 mx-1"></li>
+                </ul>
+                <div class="absolute right-0 pr-4 top-0">
+                    <i
+                        class="fas fa-minus fa-2x cursor-pointer ml-6 text-gray-700"
+                    ></i>
+                </div>
+            </div>
+
+            <!-- edit section -->
+            <div class="m-4 mx-auto">
+                <h2 class="text-lg font-semibold tracking-wide upper">
+                    Choose Lender
+                </h2>
+                <form class="flex flex-col">
+                    <label class="control control--radio"
+                        >Resimac
+                        <input type="radio" name="radio-lender" />
+                        <div class="control__indicator"></div>
+                    </label>
+                    <label class="control control--radio"
+                        >ING
+                        <input type="radio" name="radio-lender" />
+                        <div class="control__indicator"></div>
+                    </label>
+                </form>
+            </div>
+
+            <!-- back / next -->
+            <div class="m-4 px-4 w-full mx-auto">
+                <div class="flex justify-between">
+                    <button
+                        class="invisible bg-gray-200 hover:bg-white text-gray-700 focus:outline-none py-2 px-2 rounded w-full mx-2"
+                        type="button"
+                    >
+                        Back
+                    </button>
+                    <button
+                        class="bg-gray-200 hover:bg-white text-gray-700 font-semibold focus:outline-none py-1 px-2 rounded w-full mx-2"
+                        type="button"
+                    >
+                        Next
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- EDIT BOX - Matter Email -->
+        <section
+            id="edit-box-matter-email"
+            class="flex flex-col justify-between bg-gray-400 max-w-full h-auto m-4 rounded shadow-md"
+        >
+            <!-- nav circles -->
+            <div class="m-4 px-4 w-full mx-auto relative">
+                <ul class="flex mx-auto mr-10">
+                    <li
+                        class="rounded-full bg-red-400 hover:bg-red-500 h-8 w-8 mx-1 cursor-pointer"
+                    ></li>
+                    <li
+                        class="invisible rounded-full bg-orange-400 hover:bg-orange-500 h-8 w-8 mx-1 cursor-pointer"
+                    ></li>
+                    <li
+                        class="invisible rounded-full bg-yellow-400 hover:bg-yellow-500 h-8 w-8 mx-1 cursor-pointer"
+                    ></li>
+                    <li
+                        class="invisible rounded-full bg-green-400 hover:bg-green-500 h-8 w-8 mx-1 cursor-pointer"
+                    ></li>
+                    <li
+                        class="invisible rounded-full bg-teal-400 hover:bg-teal-500 h-8 w-8 mx-1 cursor-pointer"
+                    ></li>
+                    <li
+                        class="invisible rounded-full bg-blue-400 hover:bg-blue-500 h-8 w-8 mx-1 cursor-pointer"
+                    ></li>
+                    <li
+                        class="invisible rounded-full bg-indigo-400 hover:bg-indigo-500 h-8 w-8 mx-1 cursor-pointer"
+                    ></li>
+                    <li
+                        class="invisible rounded-full bg-pink-400 hover:bg-pink-500 h-8 w-8 mx-1 cursor-pointer "
+                    ></li>
+                </ul>
+                <div class="absolute right-0 pr-4 top-0">
+                    <i
+                        class="fas fa-minus fa-2x cursor-pointer ml-6 text-gray-700"
+                    ></i>
+                </div>
+            </div>
+
+            <!-- edit section -->
+            <div class="m-4 mx-auto">
+                <h2
+                    class="text-lg font-semibold tracking-wide upper mb-6 text-center"
+                >
+                    Matter Email
+                </h2>
+                <form class="flex flex-col">
+                    <label class="block text-sm font-semibold mb-2">
+                        Matter Number
+                    </label>
+                    <input
+                        class="bg-gray-200 rounded w-full py-1 px-2 focus:outline-none focus:bg-white mb-4"
+                        id="matter-number"
+                        type="text"
+                        placeholder="2019xxxxx"
+                    />
+                    <label class="block text-sm font-semibold mb-2">
+                        Originator
+                    </label>
+                    <label class="control control--radio"
+                        >Others
+                        <input type="radio" name="radio-originator" checked />
+                        <div class="control__indicator"></div>
+                    </label>
+                    <label class="control control--radio"
+                        >State Custodians
+                        <input type="radio" name="radio-originator" />
+                        <div class="control__indicator"></div>
+                    </label>
+                    <label class="control control--radio"
+                        >BCHL
+                        <input type="radio" name="radio-originator" />
+                        <div class="control__indicator"></div>
+                    </label>
+                    <label class="block text-sm font-semibold mb-2 mt-2">
+                        Professional Fees Payable to
+                    </label>
+                    <label class="control control--radio"
+                        >Resimac
+                        <input type="radio" name="radio-pf-payable" checked />
+                        <div class="control__indicator"></div>
+                    </label>
+                    <label class="control control--radio"
+                        >Borrower
+                        <input type="radio" name="radio-pf-payable" />
+                        <div class="control__indicator"></div>
+                    </label>
+                    <label class="block text-sm font-semibold mb-2 mt-2">
+                        Docs to be Delivered via
+                    </label>
+                    <label class="control control--radio"
+                        >Post
+                        <input type="radio" name="radio-delivery" checked />
+                        <div class="control__indicator"></div>
+                    </label>
+                    <label class="control control--radio"
+                        >Email
+                        <input type="radio" name="radio-delivery" />
+                        <div class="control__indicator"></div>
+                    </label>
+                </form>
+            </div>
+
+            <!-- back / next -->
+            <div class="m-4 px-4 w-full mx-auto">
+                <div class="flex justify-between">
+                    <button
+                        class="bg-red-400 hover:bg-red-500 text-white py-2 px-2 rounded w-full mx-2"
+                        type="button"
+                    >
+                        Back
+                    </button>
+                    <button
+                        class="bg-red-400 hover:bg-red-500 text-white py-1 px-2 rounded w-full mx-2"
+                        type="button"
+                    >
+                        Next
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- EDIT BOX - COA -->
+    </body>
+</html>
