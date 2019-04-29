@@ -53,19 +53,9 @@
         >
             <!-- nav circles -->
             <div class="m-4 px-4 w-full mx-auto relative">
-                <ul class="flex justify-between mr-10">
-                    <li class="rounded-full bg-gray-400 h-8 w-8 mx-1"></li>
-                    <li class="rounded-full bg-gray-400 h-8 w-8 mx-1"></li>
-                    <li class="rounded-full bg-gray-400 h-8 w-8 mx-1"></li>
-                    <li class="rounded-full bg-gray-400 h-8 w-8 mx-1"></li>
-                    <li class="rounded-full bg-gray-400 h-8 w-8 mx-1"></li>
-                    <li class="rounded-full bg-gray-400 h-8 w-8 mx-1"></li>
-                    <li class="rounded-full bg-gray-400 h-8 w-8 mx-1"></li>
-                    <li class="rounded-full bg-gray-400 h-8 w-8 mx-1"></li>
-                </ul>
-                <div class="absolute right-0 pr-4 top-0">
+                <div class="absolute right-0 pr-6 top-0">
                     <i
-                        class="fas fa-angle-up fa-2x cursor-pointer ml-6 text-gray-700"
+                        class="fas fa-angle-up fa-2x cursor-pointer text-gray-600 hover:text-gray-700"
                     ></i>
                 </div>
             </div>
@@ -94,12 +84,14 @@
                 <div class="flex justify-between">
                     <button
                         class="invisible bg-gray-200 hover:bg-white text-gray-700 focus:outline-none py-2 px-2 rounded w-full mx-2"
+                        id="back-btn-lender"
                         type="button"
                     >
                         Back
                     </button>
                     <button
                         class="bg-gray-200 hover:bg-white text-gray-700 font-semibold focus:outline-none py-1 px-2 rounded w-full mx-2"
+                        id="next-btn-lender"
                         type="button"
                     >
                         Next
@@ -111,7 +103,7 @@
         <!-- EDIT BOX - Matter Email -->
         <section
             id="edit-box-matter-email"
-            class="flex flex-col justify-between bg-gray-400 max-w-full h-auto m-4 rounded shadow-md"
+            class="flex flex-col justify-between bg-gray-400 max-w-full h-auto m-4 rounded shadow-md hidden"
         >
             <!-- nav circles -->
             <div class="m-4 px-6 w-full mx-auto relative">
@@ -223,12 +215,14 @@
                 <div class="flex justify-between">
                     <button
                         class="bg-pink-400 hover:bg-pink-500 focus:bg-pink-500 focus:outline-none text-gray-700 py-2 px-2 rounded font-semibold w-full mx-2"
+                        id="back-btn-matter-email"
                         type="button"
                     >
                         Back
                     </button>
                     <button
                         class="bg-pink-400 hover:bg-pink-500 focus:bg-pink-500 focus:outline-none text-gray-700 py-1 px-2 rounded font-semibold w-full mx-2"
+                        id="next-btn-matter-email"
                         type="button"
                     >
                         Next
@@ -239,8 +233,8 @@
 
         <!-- EDIT BOX - Title Search -->
         <section
-            id="edit-box-title-Search"
-            class="flex flex-col justify-between bg-gray-400 max-w-full h-auto m-4 rounded shadow-md"
+            id="edit-box-title-search"
+            class="flex flex-col justify-between bg-gray-400 max-w-full h-auto m-4 rounded shadow-md hidden"
         >
             <!-- nav circles -->
             <div class="m-4 px-6 w-full mx-auto relative">
@@ -433,12 +427,14 @@
                 <div class="flex justify-between">
                     <button
                         class="bg-red-400 hover:bg-red-500 focus:bg-red-500 focus:outline-none text-gray-700 py-2 px-2 rounded font-semibold w-full mx-2"
+                        id="back-btn-title-search"
                         type="button"
                     >
                         Back
                     </button>
                     <button
                         class="bg-red-400 hover:bg-red-500 focus:bg-red-500 focus:outline-none text-gray-700 py-1 px-2 rounded font-semibold w-full mx-2"
+                        id="next-btn-title-search"
                         type="button"
                     >
                         Next
@@ -450,7 +446,7 @@
         <!-- EDIT BOX - COA -->
         <section
             id="edit-box-coa"
-            class="flex flex-col justify-between bg-gray-400 max-w-full h-auto m-4 rounded shadow-md"
+            class="flex flex-col justify-between bg-gray-400 max-w-full h-auto m-4 rounded shadow-md hidden"
         >
             <!-- nav circles -->
             <div class="m-4 px-6 w-full mx-auto relative">
@@ -491,7 +487,93 @@
                 >
                     Confirmation of Approval
                 </h2>
-                <form class="flex flex-col"></form>
+                <form class="flex flex-col">
+                    <label class="block text-sm font-semibold">
+                        Loan Number
+                    </label>
+                    <input
+                        class="bg-gray-200 rounded w-full py-1 px-2 focus:outline-none focus:bg-white"
+                        id="loan-number"
+                        type="text"
+                        placeholder="001234-005678"
+                    />
+
+                    <label class="block text-sm font-semibold mt-4">
+                        Borrower 1
+                    </label>
+                    <input
+                        class="bg-gray-200 rounded w-full py-1 px-2 focus:outline-none focus:bg-white"
+                        id="borrower-name"
+                        type="text"
+                        placeholder="Name"
+                    />
+                    <input
+                        class="bg-gray-200 rounded w-full py-1 px-2 focus:outline-none focus:bg-white"
+                        id="borrower-address"
+                        type="text"
+                        placeholder="Address"
+                    />
+                    <button
+                        class="bg-orange-400 hover:bg-orange-500 focus:bg-orange-500 focus:outline-none text-gray-700 font-semibold py-1 rounded w-full"
+                        type="button"
+                    >
+                        Add Borrower
+                    </button>
+
+                    <label class="block text-sm font-semibold mt-4">
+                        Loan Purpose
+                    </label>
+                    <input
+                        class="bg-gray-200 rounded w-full py-1 px-2 focus:outline-none focus:bg-white"
+                        id="loan-purpose"
+                        type="text"
+                        placeholder="Refinance"
+                    />
+
+                    <label class="block text-sm font-semibold mt-4">
+                        First Home Owner Grant
+                    </label>
+                    <label class="control control--checkbox"
+                        >FHOG Applicable
+                        <input type="checkbox" />
+                        <div class="control__indicator"></div>
+                    </label>
+
+                    <label class="block text-sm font-semibold mt-4">
+                        Loan Amount
+                    </label>
+                    <input
+                        class="bg-gray-200 rounded w-full py-1 px-2 focus:outline-none focus:bg-white"
+                        id="loan-amount"
+                        type="text"
+                        placeholder="$123,456.78"
+                    />
+
+                    <label class="block text-sm font-semibold mt-4">
+                        Security Address
+                    </label>
+                    <input
+                        class="bg-gray-200 rounded w-full py-1 px-2 focus:outline-none focus:bg-white"
+                        id="security-address"
+                        type="text"
+                        placeholder="Address"
+                    />
+                    <button
+                        class="bg-orange-400 hover:bg-orange-500 focus:bg-orange-500 focus:outline-none text-gray-700 font-semibold py-1 rounded w-full"
+                        type="button"
+                    >
+                        Add Security
+                    </button>
+
+                    <label class="block text-sm font-semibold mt-4">
+                        Mortgagor/s
+                    </label>
+                    <label class="control control--checkbox"
+                        >xx Show Borrower 1 xx
+                        <input type="checkbox" />
+                        <div class="control__indicator"></div>
+                    </label>
+                </form>
             </div>
 
             <!-- back / next -->
@@ -499,12 +581,14 @@
                 <div class="flex justify-between">
                     <button
                         class="bg-orange-400 hover:bg-orange-500 focus:bg-orange-500 focus:outline-none text-gray-700 font-semibold py-2 px-2 rounded w-full mx-2"
+                        id="back-btn-coa"
                         type="button"
                     >
                         Back
                     </button>
                     <button
                         class="bg-orange-400 hover:bg-orange-500 focus:bg-orange-500 focus:outline-none text-gray-700 font-semibold py-1 px-2 rounded w-full mx-2"
+                        id="next-btn-coa"
                         type="button"
                     >
                         Next
@@ -516,7 +600,7 @@
         <!-- EDIT BOX - Solicitor Instruction -->
         <section
             id="edit-box-sol-ins"
-            class="flex flex-col justify-between bg-gray-400 max-w-full h-auto m-4 rounded shadow-md"
+            class="flex flex-col justify-between bg-gray-400 max-w-full h-auto m-4 rounded shadow-md hidden"
         >
             <!-- nav circles -->
             <div class="m-4 px-6 w-full mx-auto relative">
@@ -599,12 +683,14 @@
                 <div class="flex justify-between">
                     <button
                         class="bg-yellow-400 hover:bg-yellow-500 focus:outline-none text-gray-700 focus:bg-yellow-500 font-semibold py-2 px-2 rounded w-full mx-2"
+                        id="back-btn-sol-ins"
                         type="button"
                     >
                         Back
                     </button>
                     <button
                         class="bg-yellow-400 hover:bg-yellow-500 focus:bg-yellow-500 focus:outline-none text-gray-700 font-semibold py-1 px-2 rounded w-full mx-2"
+                        id="next-btn-sol-ins"
                         type="button"
                     >
                         Next
@@ -616,7 +702,7 @@
         <!-- EDIT BOX - Valuation Report -->
         <section
             id="edit-box-val-rep"
-            class="flex flex-col justify-between bg-gray-400 max-w-full h-auto m-4 rounded shadow-md"
+            class="flex flex-col justify-between bg-gray-400 max-w-full h-auto m-4 rounded shadow-md hidden"
         >
             <!-- nav circles -->
             <div class="m-4 px-6 w-full mx-auto relative">
@@ -678,7 +764,7 @@
                         Replacement Insurance
                     </label>
                     <input
-                        class="bg-gray-200 rounded w-full py-1 px-2 focus:outline-none focus:bg-white mb-2"
+                        class="bg-gray-200 rounded w-full py-1 px-2 focus:outline-none focus:bg-white"
                         id="replacement-insurance"
                         type="text"
                         placeholder="$123,456.78"
@@ -688,7 +774,7 @@
                         Valuation Date
                     </label>
                     <input
-                        class="bg-gray-200 rounded w-full py-1 px-2 focus:outline-none focus:bg-white mb-2"
+                        class="bg-gray-200 rounded w-full py-1 px-2 focus:outline-none focus:bg-white"
                         id="valuation-date"
                         type="date"
                     />
@@ -700,12 +786,14 @@
                 <div class="flex justify-between">
                     <button
                         class="bg-green-400 hover:bg-green-500 focus:bg-green-500 focus:outline-none text-gray-700 font-semibold py-2 px-2 rounded w-full mx-2"
+                        id="back-btn-val-rep"
                         type="button"
                     >
                         Back
                     </button>
                     <button
                         class="bg-green-400 hover:bg-green-500 focus:bg-green-500 focus:outline-none text-gray-700 font-semibold py-1 px-2 rounded w-full mx-2"
+                        id="next-btn-val-rep"
                         type="button"
                     >
                         Next
@@ -713,5 +801,247 @@
                 </div>
             </div>
         </section>
+
+        <!-- EDIT BOX - Rates Notice -->
+        <section
+            id="edit-box-rates-notice"
+            class="flex flex-col justify-between bg-gray-400 max-w-full h-auto m-4 rounded shadow-md hidden"
+        >
+            <!-- nav circles -->
+            <div class="m-4 px-6 w-full mx-auto relative">
+                <ul class="flex mx-auto">
+                    <li
+                        class="rounded-full bg-pink-400 hover:bg-pink-500 h-8 w-8 mr-3 cursor-pointer "
+                    ></li>
+                    <li
+                        class="rounded-full bg-red-400 hover:bg-red-500 h-8 w-8 mr-3 cursor-pointer"
+                    ></li>
+                    <li
+                        class="rounded-full bg-orange-400 hover:bg-orange-500 h-8 w-8 mr-3 cursor-pointer"
+                    ></li>
+                    <li
+                        class="rounded-full bg-yellow-400 hover:bg-yellow-500 h-8 w-8 mr-3 cursor-pointer"
+                    ></li>
+                    <li
+                        class="rounded-full bg-green-400 hover:bg-green-500 h-8 w-8 mr-3 cursor-pointer"
+                    ></li>
+                    <li
+                        class="rounded-full bg-teal-400 hover:bg-teal-500 h-8 w-8 mr-3 cursor-pointer"
+                    ></li>
+                    <li
+                        class="invisible rounded-full bg-blue-400 hover:bg-blue-500 h-8 w-8 mr-3 cursor-pointer"
+                    ></li>
+                </ul>
+                <div class="absolute right-0 pr-6 top-0">
+                    <i
+                        class="fas fa-angle-up fa-2x cursor-pointer text-gray-600 hover:text-gray-700"
+                    ></i>
+                </div>
+            </div>
+
+            <!-- edit section -->
+            <div class="mb-4 mx-6 w-auto">
+                <h2
+                    class="text-lg font-semibold tracking-wide upper mb-6 text-center"
+                >
+                    Rates Notice
+                </h2>
+                <form class="flex flex-col">
+                    <label class="block text-sm font-semibold">
+                        Not Provided
+                    </label>
+                    <label class="control control--checkbox"
+                        >Rates Notice Not Provided
+                        <input type="checkbox" />
+                        <div class="control__indicator"></div>
+                    </label>
+
+                    <label class="block text-sm font-semibold mt-4">
+                        Date of Issue
+                    </label>
+                    <label class="control control--checkbox"
+                        >Within a Year?
+                        <input type="checkbox" />
+                        <div class="control__indicator"></div>
+                    </label>
+
+                    <label class="block text-sm font-semibold mt-4">
+                        Check Security Address
+                    </label>
+                    <span class="">
+                        xxShow Security Addressxx
+                    </span>
+
+                    <label class="block text-sm font-semibold mt-4">
+                        Check Title Details
+                    </label>
+                    <span class="">
+                        xxShow Title Detailsxx
+                    </span>
+                </form>
+            </div>
+
+            <!-- back / next -->
+            <div class="m-4 px-4 w-full mx-auto">
+                <div class="flex justify-between">
+                    <button
+                        class="bg-teal-400 hover:bg-teal-500 focus:bg-teal-500 focus:outline-none text-gray-700 font-semibold py-2 px-2 rounded w-full mx-2"
+                        id="back-btn-rates-notice"
+                        type="button"
+                    >
+                        Back
+                    </button>
+                    <button
+                        class="bg-teal-400 hover:bg-teal-500 focus:bg-teal-500 focus:outline-none text-gray-700 font-semibold py-1 px-2 rounded w-full mx-2"
+                        id="finish-btn-rates-notice"
+                        type="button"
+                    >
+                        Finish
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- EDIT BOX - Contract of Sale -->
+        <section
+            id="edit-box-cos"
+            class="flex flex-col justify-between bg-gray-400 max-w-full h-auto m-4 rounded shadow-md hidden"
+        >
+            <!-- nav circles -->
+            <div class="m-4 px-6 w-full mx-auto relative">
+                <ul class="flex mx-auto">
+                    <li
+                        class="rounded-full bg-pink-400 hover:bg-pink-500 h-8 w-8 mr-3 cursor-pointer "
+                    ></li>
+                    <li
+                        class="rounded-full bg-red-400 hover:bg-red-500 h-8 w-8 mr-3 cursor-pointer"
+                    ></li>
+                    <li
+                        class="rounded-full bg-orange-400 hover:bg-orange-500 h-8 w-8 mr-3 cursor-pointer"
+                    ></li>
+                    <li
+                        class="rounded-full bg-yellow-400 hover:bg-yellow-500 h-8 w-8 mr-3 cursor-pointer"
+                    ></li>
+                    <li
+                        class="rounded-full bg-green-400 hover:bg-green-500 h-8 w-8 mr-3 cursor-pointer"
+                    ></li>
+                    <li
+                        class="rounded-full bg-teal-400 hover:bg-teal-500 h-8 w-8 mr-3 cursor-pointer"
+                    ></li>
+                    <li
+                        class="invisible rounded-full bg-blue-400 hover:bg-blue-500 h-8 w-8 mr-3 cursor-pointer"
+                    ></li>
+                </ul>
+                <div class="absolute right-0 pr-6 top-0">
+                    <i
+                        class="fas fa-angle-up fa-2x cursor-pointer text-gray-600 hover:text-gray-700"
+                    ></i>
+                </div>
+            </div>
+
+            <!-- edit section -->
+            <div class="mb-4 mx-6 w-auto">
+                <h2
+                    class="text-lg font-semibold tracking-wide upper mb-6 text-center"
+                >
+                    Contract of Sale
+                </h2>
+                <form class="flex flex-col">
+                    <label class="block text-sm font-semibold">
+                        Check Purchasers
+                    </label>
+                    <span class="">
+                        xxShow Mortgagorsxx
+                    </span>
+
+                    <label class="block text-sm font-semibold mt-4">
+                        Check Security Address
+                    </label>
+                    <span class="">
+                        xxShow Security Addressxx
+                    </span>
+
+                    <label class="block text-sm font-semibold mt-4">
+                        Check Title Details
+                    </label>
+                    <span class="">
+                        xxShow Title Detailsxx
+                    </span>
+
+                    <label class="block text-sm font-semibold mt-4">
+                        Purchaser Solicitor
+                    </label>
+                    <input
+                        class="bg-gray-200 rounded w-full py-1 px-2 focus:outline-none focus:bg-white"
+                        id="solicitor"
+                        type="text"
+                        placeholder="Solicitor"
+                    />
+                    <input
+                        class="bg-gray-200 rounded w-full py-1 px-2 focus:outline-none focus:bg-white"
+                        id="contact-name"
+                        type="text"
+                        placeholder="Contact Name"
+                    />
+                    <input
+                        class="bg-gray-200 rounded w-full py-1 px-2 focus:outline-none focus:bg-white"
+                        id="contact-email"
+                        type="text"
+                        placeholder="Contact Email"
+                    />
+
+                    <label class="block text-sm font-semibold mt-4">
+                        Purchase Price
+                    </label>
+                    <input
+                        class="bg-gray-200 rounded w-full py-1 px-2 focus:outline-none focus:bg-white"
+                        id="purchase-price"
+                        type="text"
+                        placeholder="$123,456.78"
+                    />
+
+                    <label class="block text-sm font-semibold mt-4">
+                        Deposit
+                    </label>
+                    <input
+                        class="bg-gray-200 rounded w-full py-1 px-2 focus:outline-none focus:bg-white"
+                        id="deposit"
+                        type="text"
+                        placeholder="$12,345.67"
+                    />
+
+                    <label class="block text-sm font-semibold mt-4">
+                        Date of Contract
+                    </label>
+                    <input
+                        class="bg-gray-200 rounded w-full py-1 px-2 focus:outline-none focus:bg-white"
+                        id="date-of-contract"
+                        type="date"
+                    />
+                </form>
+            </div>
+
+            <!-- back / next -->
+            <div class="m-4 px-4 w-full mx-auto">
+                <div class="flex justify-between">
+                    <button
+                        class="bg-teal-400 hover:bg-teal-500 focus:bg-teal-500 focus:outline-none text-gray-700 font-semibold py-2 px-2 rounded w-full mx-2"
+                        id="back-btn-cos"
+                        type="button"
+                    >
+                        Back
+                    </button>
+                    <button
+                        class="bg-teal-400 hover:bg-teal-500 focus:bg-teal-500 focus:outline-none text-gray-700 font-semibold py-1 px-2 rounded w-full mx-2"
+                        id="finish-btn-cos"
+                        type="button"
+                    >
+                        Finish
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <script src="main.js"></script>
     </body>
 </html>
