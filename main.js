@@ -1,5 +1,6 @@
 // VARIABLES
 
+// button variables
 const editBoxLender = document.getElementById("edit-box-lender");
 const nextBtnLender = document.getElementById("next-btn-lender");
 
@@ -40,6 +41,12 @@ const backBtnCos = document.getElementById("back-btn-cos");
 
 const upDownArrow = document.querySelectorAll(".arrow-up");
 
+// input variables
+const matterNumber = document.getElementById("matter-number");
+
+// general tab variables
+const mainHeader = document.getElementById("main-header");
+const postOrEmail = document.getElementById("post-or-email")
 // LOGIC
 
 // logic of buttons
@@ -71,6 +78,10 @@ backBtnCos.addEventListener("click", backBtn);
 for (let i = 0; i < upDownArrow.length; i++) {
     upDownArrow[i].addEventListener("click", arrowUpDown);
 }
+
+// general tab logic
+matterNumber.addEventListener("blur", pasteMatterNumber);
+// postOrEmail.addEventListener("mousedown", postOrEmailRadio)
 
 // FUNCTIONS
 
@@ -159,3 +170,14 @@ function arrowUpDown(e) {
         e.target.classList.remove("fa-angle-down");
     }
 }
+
+// functions for general tab
+function pasteMatterNumber(e) {
+    mainHeader.textContent = e.target.value;
+}
+
+function postOrEmailRadio(e){
+    
+}
+
+console.log($0)

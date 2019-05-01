@@ -83,14 +83,14 @@
             <div class="m-4 px-4 w-full mx-auto">
                 <div class="flex justify-between">
                     <button
-                        class="invisible bg-gray-200 hover:bg-white text-gray-700 focus:outline-none py-2 px-2 rounded w-full mx-2"
+                        class="invisible bg-gray-200 hover:bg-white text-gray-700 focus:outline-none py-1 px-2 rounded w-full mx-2"
                         id="back-btn-lender"
                         type="button"
                     >
                         Back
                     </button>
                     <button
-                        class="bg-gray-200 hover:bg-white text-gray-700 font-semibold focus:outline-none py-1 px-2 rounded w-full mx-2"
+                        class="bg-gray-200 hover:bg-white text-gray-700 font-semibold focus:outline-none py-2 px-2 rounded w-full mx-2"
                         id="next-btn-lender"
                         type="button"
                     >
@@ -109,25 +109,34 @@
             <div class="m-4 px-6 w-full mx-auto relative">
                 <ul class="flex mx-auto">
                     <li
-                        class="rounded-full bg-pink-400 hover:bg-pink-500 h-8 w-8 mr-3 cursor-pointer" id="nav-btn-matter-email"
+                        class="invisible rounded-full border-2 border-gray-700 bg-gray-700 hover:bg-gray-600 text-white h-8 w-8 mr-3 cursor-pointer text-center font-semibold"
+                        id="nav-btn-matter-email"
+                    >
+                        E
+                    </li>
+                    <li
+                        class="invisible rounded-full bg-red-400 hover:bg-red-500 h-8 w-8 mr-3 cursor-pointer"
+                        id="nav-btn-title-search"
                     ></li>
                     <li
-                        class="invisible rounded-full bg-red-400 hover:bg-red-500 h-8 w-8 mr-3 cursor-pointer" id="nav-btn-title-search"
+                        class="invisible rounded-full bg-orange-400 hover:bg-orange-500 h-8 w-8 mr-3 cursor-pointer"
+                        id="nav-btn-coa"
                     ></li>
                     <li
-                        class="invisible rounded-full bg-orange-400 hover:bg-orange-500 h-8 w-8 mr-3 cursor-pointer" id="nav-btn-coa"
+                        class="invisible rounded-full bg-green-400 hover:bg-green-500 h-8 w-8 mr-3 cursor-pointer"
+                        id="nav-btn-sol-ins"
                     ></li>
                     <li
-                        class="invisible rounded-full bg-green-400 hover:bg-green-500 h-8 w-8 mr-3 cursor-pointer" id="nav-btn-sol-ins"
+                        class="invisible rounded-full bg-teal-400 hover:bg-teal-500 h-8 w-8 mr-3 cursor-pointer"
+                        id="nav-btn-val-rep"
                     ></li>
                     <li
-                        class="invisible rounded-full bg-teal-400 hover:bg-teal-500 h-8 w-8 mr-3 cursor-pointer" id="nav-btn-val-rep"
+                        class="invisible rounded-full bg-blue-400 hover:bg-blue-500 h-8 w-8 mr-3 cursor-pointer"
+                        id="nav-btn-rates-notice"
                     ></li>
                     <li
-                        class="invisible rounded-full bg-blue-400 hover:bg-blue-500 h-8 w-8 mr-3 cursor-pointer" id="nav-btn-rates-notice"
-                    ></li>
-                    <li
-                        class="invisible rounded-full bg-indigo-400 hover:bg-indigo-500 h-8 w-8 mr-3 cursor-pointer" id="nav-btn-cos"
+                        class="invisible rounded-full bg-indigo-400 hover:bg-indigo-500 h-8 w-8 mr-3 cursor-pointer"
+                        id="nav-btn-cos"
                     ></li>
                 </ul>
                 <div class="absolute right-0 pr-6 top-0">
@@ -199,12 +208,12 @@
                     </label>
                     <label class="control control--radio"
                         >Post
-                        <input type="radio" name="radio-delivery" checked />
+                        <input type="radio" name="radio-delivery" value="post" checked />
                         <div class="control__indicator"></div>
                     </label>
                     <label class="control control--radio"
                         >Email
-                        <input type="radio" name="radio-delivery" />
+                        <input type="radio" name="radio-delivery" value="email"/>
                         <div class="control__indicator"></div>
                     </label>
                 </form>
@@ -214,14 +223,14 @@
             <div class="m-4 px-4 w-full mx-auto">
                 <div class="flex justify-between">
                     <button
-                        class="bg-pink-400 hover:bg-pink-500 focus:bg-pink-500 focus:outline-none text-gray-700 py-2 px-2 rounded font-semibold w-full mx-2"
+                        class="invisible bg-gray-700 hover:bg-white hover:text-gray-700 focus:bg-white focus:text-gray-700 focus:outline-none font-semibold text-white py-2 px-2 rounded font-semibold w-full mx-2"
                         id="back-btn-matter-email"
                         type="button"
                     >
                         Back
                     </button>
                     <button
-                        class="bg-pink-400 hover:bg-pink-500 focus:bg-pink-500 focus:outline-none text-gray-700 py-1 px-2 rounded font-semibold w-full mx-2"
+                        class="bg-gray-700 hover:bg-white hover:text-gray-700 focus:bg-white focus:text-gray-700 focus:outline-none font-semibold text-white py-2 px-2 rounded font-semibold w-full mx-2"
                         id="next-btn-matter-email"
                         type="button"
                     >
@@ -240,25 +249,32 @@
             <div class="m-4 px-6 w-full mx-auto relative">
                 <ul class="flex mx-auto">
                     <li
-                        class="rounded-full bg-pink-400 hover:bg-pink-500 h-8 w-8 mr-3 cursor-pointer " id="nav-btn-matter-email"
+                        class="invisible rounded-full bg-pink-400 hover:bg-pink-500 h-8 w-8 mr-3 cursor-pointer "
+                        id="nav-btn-matter-email"
                     ></li>
                     <li
-                        class="rounded-full bg-red-400 hover:bg-red-500 h-8 w-8 mr-3 cursor-pointer" id="nav-btn-title-search"
+                        class="invisible rounded-full bg-red-400 hover:bg-red-500 h-8 w-8 mr-3 cursor-pointer"
+                        id="nav-btn-title-search"
                     ></li>
                     <li
-                        class="invisible rounded-full bg-orange-400 hover:bg-orange-500 h-8 w-8 mr-3 cursor-pointer" id="nav-btn-coa"
+                        class="invisible rounded-full bg-orange-400 hover:bg-orange-500 h-8 w-8 mr-3 cursor-pointer"
+                        id="nav-btn-coa"
                     ></li>
                     <li
-                        class="invisible rounded-full bg-green-400 hover:bg-green-500 h-8 w-8 mr-3 cursor-pointer" id="nav-btn-sol-ins"
+                        class="invisible rounded-full bg-green-400 hover:bg-green-500 h-8 w-8 mr-3 cursor-pointer"
+                        id="nav-btn-sol-ins"
                     ></li>
                     <li
-                        class="invisible rounded-full bg-teal-400 hover:bg-teal-500 h-8 w-8 mr-3 cursor-pointer" id="nav-btn-val-rep"
+                        class="invisible rounded-full bg-teal-400 hover:bg-teal-500 h-8 w-8 mr-3 cursor-pointer"
+                        id="nav-btn-val-rep"
                     ></li>
                     <li
-                        class="invisible rounded-full bg-blue-400 hover:bg-blue-500 h-8 w-8 mr-3 cursor-pointer" id="nav-btn-rates-notice"
+                        class="invisible rounded-full bg-blue-400 hover:bg-blue-500 h-8 w-8 mr-3 cursor-pointer"
+                        id="nav-btn-rates-notice"
                     ></li>
                     <li
-                        class="invisible rounded-full bg-indigo-400 hover:bg-indigo-500 h-8 w-8 mr-3 cursor-pointer" id="nav-btn-cos"
+                        class="invisible rounded-full bg-indigo-400 hover:bg-indigo-500 h-8 w-8 mr-3 cursor-pointer"
+                        id="nav-btn-cos"
                     ></li>
                 </ul>
                 <div class="absolute right-0 pr-6 top-0">
@@ -426,14 +442,14 @@
             <div class="m-4 px-4 w-full mx-auto">
                 <div class="flex justify-between">
                     <button
-                        class="bg-red-400 hover:bg-red-500 focus:bg-red-500 focus:outline-none text-gray-700 py-2 px-2 rounded font-semibold w-full mx-2"
+                        class="bg-gray-700 hover:bg-white hover:text-gray-700 focus:bg-white focus:text-gray-700 focus:outline-none font-semibold text-white py-2 px-2 rounded font-semibold w-full mx-2"
                         id="back-btn-title-search"
                         type="button"
                     >
                         Back
                     </button>
                     <button
-                        class="bg-red-400 hover:bg-red-500 focus:bg-red-500 focus:outline-none text-gray-700 py-1 px-2 rounded font-semibold w-full mx-2"
+                        class="bg-gray-700 hover:bg-white hover:text-gray-700 focus:bg-white focus:text-gray-700 focus:outline-none font-semibold text-white py-2 px-2 rounded font-semibold w-full mx-2"
                         id="next-btn-title-search"
                         type="button"
                     >
@@ -452,25 +468,32 @@
             <div class="m-4 px-6 w-full mx-auto relative">
                 <ul class="flex mx-auto">
                     <li
-                        class="rounded-full bg-pink-400 hover:bg-pink-500 h-8 w-8 mr-3 cursor-pointer " id="nav-btn-matter-email"
+                        class="invisible rounded-full bg-pink-400 hover:bg-pink-500 h-8 w-8 mr-3 cursor-pointer "
+                        id="nav-btn-matter-email"
                     ></li>
                     <li
-                        class="rounded-full bg-red-400 hover:bg-red-500 h-8 w-8 mr-3 cursor-pointer" id="nav-btn-title-search"
+                        class="invisible rounded-full bg-red-400 hover:bg-red-500 h-8 w-8 mr-3 cursor-pointer"
+                        id="nav-btn-title-search"
                     ></li>
                     <li
-                        class="rounded-full bg-orange-400 hover:bg-orange-500 h-8 w-8 mr-3 cursor-pointer" id="nav-btn-coa"
+                        class="invisible rounded-full bg-orange-400 hover:bg-orange-500 h-8 w-8 mr-3 cursor-pointer"
+                        id="nav-btn-coa"
                     ></li>
                     <li
-                        class="invisible rounded-full bg-green-400 hover:bg-green-500 h-8 w-8 mr-3 cursor-pointer" id="nav-btn-sol-ins"
+                        class="invisible rounded-full bg-green-400 hover:bg-green-500 h-8 w-8 mr-3 cursor-pointer"
+                        id="nav-btn-sol-ins"
                     ></li>
                     <li
-                        class="invisible rounded-full bg-teal-400 hover:bg-teal-500 h-8 w-8 mr-3 cursor-pointer" id="nav-btn-val-rep"
+                        class="invisible rounded-full bg-teal-400 hover:bg-teal-500 h-8 w-8 mr-3 cursor-pointer"
+                        id="nav-btn-val-rep"
                     ></li>
                     <li
-                        class="invisible rounded-full bg-blue-400 hover:bg-blue-500 h-8 w-8 mr-3 cursor-pointer" id="nav-btn-rates-notice"
+                        class="invisible rounded-full bg-blue-400 hover:bg-blue-500 h-8 w-8 mr-3 cursor-pointer"
+                        id="nav-btn-rates-notice"
                     ></li>
                     <li
-                        class="invisible rounded-full bg-indigo-400 hover:bg-indigo-500 h-8 w-8 mr-3 cursor-pointer" id="nav-btn-cos"
+                        class="invisible rounded-full bg-indigo-400 hover:bg-indigo-500 h-8 w-8 mr-3 cursor-pointer"
+                        id="nav-btn-cos"
                     ></li>
                 </ul>
                 <div class="absolute right-0 pr-6 top-0">
@@ -514,7 +537,7 @@
                         placeholder="Address"
                     />
                     <button
-                        class="bg-orange-400 hover:bg-orange-500 focus:bg-orange-500 focus:outline-none text-gray-700 font-semibold py-1 rounded w-full"
+                        class="bg-gray-700 hover:bg-white hover:text-gray-700 focus:bg-white focus:text-gray-700 focus:outline-none text-white text-sm font-semibold focus:outline-none py-1 rounded w-full"
                         type="button"
                     >
                         Add Borrower
@@ -559,7 +582,7 @@
                         placeholder="Address"
                     />
                     <button
-                        class="bg-orange-400 hover:bg-orange-500 focus:bg-orange-500 focus:outline-none text-gray-700 font-semibold py-1 rounded w-full"
+                        class="bg-gray-700 hover:bg-white hover:text-gray-700 focus:bg-white focus:text-gray-700 focus:outline-none text-white text-sm font-semibold focus:outline-none py-1 rounded w-full"
                         type="button"
                     >
                         Add Security
@@ -580,14 +603,14 @@
             <div class="m-4 px-4 w-full mx-auto">
                 <div class="flex justify-between">
                     <button
-                        class="bg-orange-400 hover:bg-orange-500 focus:bg-orange-500 focus:outline-none text-gray-700 font-semibold py-2 px-2 rounded w-full mx-2"
+                        class="bg-gray-700 hover:bg-white hover:text-gray-700 focus:bg-white focus:text-gray-700 focus:outline-none font-semibold text-white py-2 px-2 rounded w-full mx-2"
                         id="back-btn-coa"
                         type="button"
                     >
                         Back
                     </button>
                     <button
-                        class="bg-orange-400 hover:bg-orange-500 focus:bg-orange-500 focus:outline-none text-gray-700 font-semibold py-1 px-2 rounded w-full mx-2"
+                        class="bg-gray-700 hover:bg-white hover:text-gray-700 focus:bg-white focus:text-gray-700 focus:outline-none font-semibold text-white py-2 px-2 rounded w-full mx-2"
                         id="next-btn-coa"
                         type="button"
                     >
@@ -606,25 +629,32 @@
             <div class="m-4 px-6 w-full mx-auto relative">
                 <ul class="flex mx-auto">
                     <li
-                        class="rounded-full bg-pink-400 hover:bg-pink-500 h-8 w-8 mr-3 cursor-pointer " id="nav-btn-matter-email"
+                        class="invisible rounded-full bg-pink-400 hover:bg-pink-500 h-8 w-8 mr-3 cursor-pointer "
+                        id="nav-btn-matter-email"
                     ></li>
                     <li
-                        class="rounded-full bg-red-400 hover:bg-red-500 h-8 w-8 mr-3 cursor-pointer" id="nav-btn-title-search"
+                        class="invisible rounded-full bg-red-400 hover:bg-red-500 h-8 w-8 mr-3 cursor-pointer"
+                        id="nav-btn-title-search"
                     ></li>
                     <li
-                        class="rounded-full bg-orange-400 hover:bg-orange-500 h-8 w-8 mr-3 cursor-pointer" id="nav-btn-coa"
+                        class="invisible rounded-full bg-orange-400 hover:bg-orange-500 h-8 w-8 mr-3 cursor-pointer"
+                        id="nav-btn-coa"
                     ></li>
                     <li
-                        class="rounded-full bg-yellow-400 hover:bg-yellow-500 h-8 w-8 mr-3 cursor-pointer" id="nav-btn-sol-ins"
+                        class="invisible rounded-full bg-yellow-400 hover:bg-yellow-500 h-8 w-8 mr-3 cursor-pointer"
+                        id="nav-btn-sol-ins"
                     ></li>
                     <li
-                        class="invisible rounded-full bg-teal-400 hover:bg-teal-500 h-8 w-8 mr-3 cursor-pointer" id="nav-btn-val-rep"
+                        class="invisible rounded-full bg-teal-400 hover:bg-teal-500 h-8 w-8 mr-3 cursor-pointer"
+                        id="nav-btn-val-rep"
                     ></li>
                     <li
-                        class="invisible rounded-full bg-blue-400 hover:bg-blue-500 h-8 w-8 mr-3 cursor-pointer" id="nav-btn-rates-notice"
+                        class="invisible rounded-full bg-blue-400 hover:bg-blue-500 h-8 w-8 mr-3 cursor-pointer"
+                        id="nav-btn-rates-notice"
                     ></li>
                     <li
-                        class="invisible rounded-full bg-indigo-400 hover:bg-indigo-500 h-8 w-8 mr-3 cursor-pointer" id="nav-btn-cos"
+                        class="invisible rounded-full bg-indigo-400 hover:bg-indigo-500 h-8 w-8 mr-3 cursor-pointer"
+                        id="nav-btn-cos"
                     ></li>
                 </ul>
                 <div class="absolute right-0 pr-6 top-0">
@@ -682,14 +712,14 @@
             <div class="m-4 px-4 w-full mx-auto">
                 <div class="flex justify-between">
                     <button
-                        class="bg-yellow-400 hover:bg-yellow-500 focus:outline-none text-gray-700 focus:bg-yellow-500 font-semibold py-2 px-2 rounded w-full mx-2"
+                        class="bg-gray-700 hover:bg-white hover:text-gray-700 focus:bg-white focus:text-gray-700 focus:outline-none font-semibold text-white py-2 px-2 rounded w-full mx-2"
                         id="back-btn-sol-ins"
                         type="button"
                     >
                         Back
                     </button>
                     <button
-                        class="bg-yellow-400 hover:bg-yellow-500 focus:bg-yellow-500 focus:outline-none text-gray-700 font-semibold py-1 px-2 rounded w-full mx-2"
+                        class="bg-gray-700 hover:bg-white hover:text-gray-700 focus:bg-white focus:text-gray-700 focus:outline-none font-semibold text-white py-2 px-2 rounded w-full mx-2"
                         id="next-btn-sol-ins"
                         type="button"
                     >
@@ -708,25 +738,32 @@
             <div class="m-4 px-6 w-full mx-auto relative">
                 <ul class="flex mx-auto">
                     <li
-                        class="rounded-full bg-pink-400 hover:bg-pink-500 h-8 w-8 mr-3 cursor-pointer " id="nav-btn-matter-email"
+                        class="invisible rounded-full bg-pink-400 hover:bg-pink-500 h-8 w-8 mr-3 cursor-pointer "
+                        id="nav-btn-matter-email"
                     ></li>
                     <li
-                        class="rounded-full bg-red-400 hover:bg-red-500 h-8 w-8 mr-3 cursor-pointer" id="nav-btn-title-search"
+                        class="invisible rounded-full bg-red-400 hover:bg-red-500 h-8 w-8 mr-3 cursor-pointer"
+                        id="nav-btn-title-search"
                     ></li>
                     <li
-                        class="rounded-full bg-orange-400 hover:bg-orange-500 h-8 w-8 mr-3 cursor-pointer" id="nav-btn-coa"
+                        class="invisible rounded-full bg-orange-400 hover:bg-orange-500 h-8 w-8 mr-3 cursor-pointer"
+                        id="nav-btn-coa"
                     ></li>
                     <li
-                        class="rounded-full bg-yellow-400 hover:bg-yellow-500 h-8 w-8 mr-3 cursor-pointer" id="nav-btn-sol-ins"
+                        class="invisible rounded-full bg-yellow-400 hover:bg-yellow-500 h-8 w-8 mr-3 cursor-pointer"
+                        id="nav-btn-sol-ins"
                     ></li>
                     <li
-                        class="rounded-full bg-green-400 hover:bg-green-500 h-8 w-8 mr-3 cursor-pointer" id="nav-btn-val-rep"
+                        class="invisible rounded-full bg-green-400 hover:bg-green-500 h-8 w-8 mr-3 cursor-pointer"
+                        id="nav-btn-val-rep"
                     ></li>
                     <li
-                        class="invisible rounded-full bg-teal-400 hover:bg-teal-500 h-8 w-8 mr-3 cursor-pointer" id="nav-btn-rates-notice"
+                        class="invisible rounded-full bg-teal-400 hover:bg-teal-500 h-8 w-8 mr-3 cursor-pointer"
+                        id="nav-btn-rates-notice"
                     ></li>
                     <li
-                        class="invisible rounded-full bg-blue-400 hover:bg-blue-500 h-8 w-8 mr-3 cursor-pointer" id="nav-btn-cos"
+                        class="invisible rounded-full bg-blue-400 hover:bg-blue-500 h-8 w-8 mr-3 cursor-pointer"
+                        id="nav-btn-cos"
                     ></li>
                 </ul>
                 <div class="absolute right-0 pr-6 top-0">
@@ -785,14 +822,14 @@
             <div class="m-4 px-4 w-full mx-auto">
                 <div class="flex justify-between">
                     <button
-                        class="bg-green-400 hover:bg-green-500 focus:bg-green-500 focus:outline-none text-gray-700 font-semibold py-2 px-2 rounded w-full mx-2"
+                        class="bg-gray-700 hover:bg-white hover:text-gray-700 focus:bg-white focus:text-gray-700 focus:outline-none font-semibold text-white py-2 px-2 rounded w-full mx-2"
                         id="back-btn-val-rep"
                         type="button"
                     >
                         Back
                     </button>
                     <button
-                        class="bg-green-400 hover:bg-green-500 focus:bg-green-500 focus:outline-none text-gray-700 font-semibold py-1 px-2 rounded w-full mx-2"
+                        class="bg-gray-700 hover:bg-white hover:text-gray-700 focus:bg-white focus:text-gray-700 focus:outline-none font-semibold text-white py-2 px-2 rounded w-full mx-2"
                         id="next-btn-val-rep"
                         type="button"
                     >
@@ -811,25 +848,32 @@
             <div class="m-4 px-6 w-full mx-auto relative">
                 <ul class="flex mx-auto">
                     <li
-                        class="rounded-full bg-pink-400 hover:bg-pink-500 h-8 w-8 mr-3 cursor-pointer " id="nav-btn-matter-email"
+                        class="invisible rounded-full bg-pink-400 hover:bg-pink-500 h-8 w-8 mr-3 cursor-pointer "
+                        id="nav-btn-matter-email"
                     ></li>
                     <li
-                        class="rounded-full bg-red-400 hover:bg-red-500 h-8 w-8 mr-3 cursor-pointer" id="nav-btn-title-search"
+                        class="invisible rounded-full bg-red-400 hover:bg-red-500 h-8 w-8 mr-3 cursor-pointer"
+                        id="nav-btn-title-search"
                     ></li>
                     <li
-                        class="rounded-full bg-orange-400 hover:bg-orange-500 h-8 w-8 mr-3 cursor-pointer" id="nav-btn-coa"
+                        class="invisible rounded-full bg-orange-400 hover:bg-orange-500 h-8 w-8 mr-3 cursor-pointer"
+                        id="nav-btn-coa"
                     ></li>
                     <li
-                        class="rounded-full bg-yellow-400 hover:bg-yellow-500 h-8 w-8 mr-3 cursor-pointer" id="nav-btn-sol-ins"
+                        class="invisible rounded-full bg-yellow-400 hover:bg-yellow-500 h-8 w-8 mr-3 cursor-pointer"
+                        id="nav-btn-sol-ins"
                     ></li>
                     <li
-                        class="rounded-full bg-green-400 hover:bg-green-500 h-8 w-8 mr-3 cursor-pointer" id="nav-btn-val-rep"
+                        class="invisible rounded-full bg-green-400 hover:bg-green-500 h-8 w-8 mr-3 cursor-pointer"
+                        id="nav-btn-val-rep"
                     ></li>
                     <li
-                        class="rounded-full bg-teal-400 hover:bg-teal-500 h-8 w-8 mr-3 cursor-pointer" id="nav-btn-rates-notice"
+                        class="invisible rounded-full bg-teal-400 hover:bg-teal-500 h-8 w-8 mr-3 cursor-pointer"
+                        id="nav-btn-rates-notice"
                     ></li>
                     <li
-                        class="invisible rounded-full bg-blue-400 hover:bg-blue-500 h-8 w-8 mr-3 cursor-pointer" id="nav-btn-cos"
+                        class="invisible rounded-full bg-blue-400 hover:bg-blue-500 h-8 w-8 mr-3 cursor-pointer"
+                        id="nav-btn-cos"
                     ></li>
                 </ul>
                 <div class="absolute right-0 pr-6 top-0">
@@ -885,14 +929,14 @@
             <div class="m-4 px-4 w-full mx-auto">
                 <div class="flex justify-between">
                     <button
-                        class="bg-teal-400 hover:bg-teal-500 focus:bg-teal-500 focus:outline-none text-gray-700 font-semibold py-2 px-2 rounded w-full mx-2"
+                        class="bg-gray-700 hover:bg-white hover:text-gray-700 focus:bg-white focus:text-gray-700 focus:outline-none font-semibold text-white py-2 px-2 rounded w-full mx-2"
                         id="back-btn-rates-notice"
                         type="button"
                     >
                         Back
                     </button>
                     <button
-                        class="bg-teal-400 hover:bg-teal-500 focus:bg-teal-500 focus:outline-none text-gray-700 font-semibold py-1 px-2 rounded w-full mx-2"
+                        class="bg-gray-700 hover:bg-white hover:text-gray-700 focus:bg-white focus:text-gray-700 focus:outline-none font-semibold text-white py-2 px-2 rounded w-full mx-2"
                         id="finish-btn-rates-notice"
                         type="button"
                     >
@@ -911,25 +955,32 @@
             <div class="m-4 px-6 w-full mx-auto relative">
                 <ul class="flex mx-auto">
                     <li
-                        class="rounded-full bg-pink-400 hover:bg-pink-500 h-8 w-8 mr-3 cursor-pointer " id="nav-btn-matter-email"
+                        class="invisible rounded-full bg-pink-400 hover:bg-pink-500 h-8 w-8 mr-3 cursor-pointer "
+                        id="nav-btn-matter-email"
                     ></li>
                     <li
-                        class="rounded-full bg-red-400 hover:bg-red-500 h-8 w-8 mr-3 cursor-pointer" id="nav-btn-title-search"
+                        class="invisible rounded-full bg-red-400 hover:bg-red-500 h-8 w-8 mr-3 cursor-pointer"
+                        id="nav-btn-title-search"
                     ></li>
                     <li
-                        class="rounded-full bg-orange-400 hover:bg-orange-500 h-8 w-8 mr-3 cursor-pointer" id="nav-btn-coa"
+                        class="invisible rounded-full bg-orange-400 hover:bg-orange-500 h-8 w-8 mr-3 cursor-pointer"
+                        id="nav-btn-coa"
                     ></li>
                     <li
-                        class="rounded-full bg-yellow-400 hover:bg-yellow-500 h-8 w-8 mr-3 cursor-pointer" id="nav-btn-sol-ins"
+                        class="invisible rounded-full bg-yellow-400 hover:bg-yellow-500 h-8 w-8 mr-3 cursor-pointer"
+                        id="nav-btn-sol-ins"
                     ></li>
                     <li
-                        class="rounded-full bg-green-400 hover:bg-green-500 h-8 w-8 mr-3 cursor-pointer" id="nav-btn-val-rep"
+                        class="invisible rounded-full bg-green-400 hover:bg-green-500 h-8 w-8 mr-3 cursor-pointer"
+                        id="nav-btn-val-rep"
                     ></li>
                     <li
-                        class="rounded-full bg-teal-400 hover:bg-teal-500 h-8 w-8 mr-3 cursor-pointer" id="nav-btn-rates-notice"
+                        class="invisible rounded-full bg-teal-400 hover:bg-teal-500 h-8 w-8 mr-3 cursor-pointer"
+                        id="nav-btn-rates-notice"
                     ></li>
                     <li
-                        class="invisible rounded-full bg-blue-400 hover:bg-blue-500 h-8 w-8 mr-3 cursor-pointer" id="nav-btn-cos"
+                        class="invisible rounded-full bg-blue-400 hover:bg-blue-500 h-8 w-8 mr-3 cursor-pointer"
+                        id="nav-btn-cos"
                     ></li>
                 </ul>
                 <div class="absolute right-0 pr-6 top-0">
@@ -1025,14 +1076,14 @@
             <div class="m-4 px-4 w-full mx-auto">
                 <div class="flex justify-between">
                     <button
-                        class="bg-teal-400 hover:bg-teal-500 focus:bg-teal-500 focus:outline-none text-gray-700 font-semibold py-2 px-2 rounded w-full mx-2"
+                        class="bg-gray-700 hover:bg-white hover:text-gray-700 focus:bg-white focus:text-gray-700 focus:outline-none font-semibold text-white py-2 px-2 rounded w-full mx-2"
                         id="back-btn-cos"
                         type="button"
                     >
                         Back
                     </button>
                     <button
-                        class="bg-teal-400 hover:bg-teal-500 focus:bg-teal-500 focus:outline-none text-gray-700 font-semibold py-1 px-2 rounded w-full mx-2"
+                        class="bg-gray-700 hover:bg-white hover:text-gray-700 focus:bg-white focus:text-gray-700 focus:outline-none font-semibold text-white py-2 px-2 rounded w-full mx-2"
                         id="finish-btn-cos"
                         type="button"
                     >
@@ -1041,6 +1092,94 @@
                 </div>
             </div>
         </section>
+
+        <!-- DETAILS SECTION -->
+        <main class="m-4">
+            <!-- Header -->
+            <section>
+                <h1
+                    class="text-center text-xl font-semibold tracking-wide mt-10 mb-8" id="main-header"
+                >
+                    xx Matter Number - Borrower's Name xx
+                </h1>
+            </section>
+
+            <!-- General Tab -->
+            <section>
+                <h2 class="text-lg font-semibold tracking-wide text-center">
+                    General Tab
+                </h2>
+                <label class="block text-sm font-semibold">
+                    Email / Post / DocuSign?
+                </label>
+                <p class="mt-1" id="">
+                    xx Post or Email xx
+                </p>
+
+                <!-- if purchase -->
+                <div class="if-purchase">
+                    <label class="block text-sm font-semibold mt-4">
+                        Borrower Solicitors
+                    </label>
+                    <input
+                        class="bg-white border border-gray-700 rounded w-full py-1 px-2 focus:outline-none cursor-not-allowed focus:bg-white"
+                        id="borrower-solicitors"
+                        type="text"
+                        value="xxx"
+                        disabled
+                    />
+                    <label class="block text-sm font-semibold mt-4">
+                        Solicitor Contact Name
+                    </label>
+                    <input
+                        class="bg-white border border-gray-700 rounded w-full py-1 px-2 focus:outline-none cursor-not-allowed focus:bg-white"
+                        id="solicitor-contact-name"
+                        type="text"
+                        value="xxx"
+                        disabled
+                    />
+                    <label class="block text-sm font-semibold mt-4">
+                        Solicitor Contact Email
+                    </label>
+                    <input
+                        class="bg-white border border-gray-700 rounded w-full py-1 px-2 focus:outline-none cursor-not-allowed focus:bg-white"
+                        id="solicitor-email"
+                        type="text"
+                        value="xxx"
+                        disabled
+                    />
+                </div>
+
+                <label class="block text-sm font-semibold mt-4">
+                    Send docs to Borrower?
+                </label>
+                <p class="mt-1">
+                    xx Yes or No xx
+                </p>
+
+                <label class="block text-sm font-semibold mt-4">
+                    Team Leader
+                </label>
+                <input
+                    class="bg-white border border-gray-700 rounded w-full py-1 px-2 focus:outline-none cursor-not-allowed focus:bg-white"
+                    id="team-leader"
+                    type="text"
+                    value="xxx"
+                    disabled
+                />
+
+                <label class="block text-sm font-semibold mt-4">
+                    Admin Assistant
+                </label>
+                <input
+                    class="bg-white border border-gray-700 rounded w-full py-1 px-2 focus:outline-none cursor-not-allowed focus:bg-white"
+                    id="admin-assistant"
+                    type="text"
+                    value="xxx"
+                    disabled
+                />
+            </section>
+        </main>
 
         <script src="main.js"></script>
     </body>
