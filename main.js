@@ -43,10 +43,16 @@ const upDownArrow = document.querySelectorAll(".arrow-up");
 
 // input variables
 const matterNumber = document.getElementById("matter-number");
+const radioEmail = document.getElementById("radio-email");
+const radioPost = document.getElementById("radio-post");
+const author = document.getElementById("author");
 
 // general tab variables
 const mainHeader = document.getElementById("main-header");
-const postOrEmail = document.getElementById("post-or-email")
+const emailOrPost = document.getElementById("email-or-post");
+const teamLeader = document.getElementById("team-leader");
+const adminAssistant = document.getElementById("admin-assistant");
+
 // LOGIC
 
 // logic of buttons
@@ -81,7 +87,9 @@ for (let i = 0; i < upDownArrow.length; i++) {
 
 // general tab logic
 matterNumber.addEventListener("blur", pasteMatterNumber);
-// postOrEmail.addEventListener("mousedown", postOrEmailRadio)
+radioEmail.addEventListener("change", emailRadio);
+radioPost.addEventListener("change", postRadio);
+author.addEventListener("blur", authorLeadAndAss);
 
 // FUNCTIONS
 
@@ -176,8 +184,161 @@ function pasteMatterNumber(e) {
     mainHeader.textContent = e.target.value;
 }
 
-function postOrEmailRadio(e){
-    
+function postRadio(e) {
+    if ((e.target.checked = true)) emailOrPost.textContent = "1 - Post";
 }
 
-console.log($0)
+function emailRadio(e) {
+    if ((e.target.checked = true)) emailOrPost.textContent = "0 - Email";
+}
+
+// paralegal's leader and assistant
+function authorLeadAndAss(e) {
+    switch (e.target.value) {
+        case "ARD".toLowerCase():
+        case "ARD".toUpperCase():
+            teamLeader.value = "   ";
+            adminAssistant.value = "KED";
+            break;
+        case "CYS".toLowerCase():
+        case "CYS".toUpperCase():
+            teamLeader.value = "   ";
+            adminAssistant.value = "RXB";
+            break;
+        case "TMO".toLowerCase():
+        case "TMO".toUpperCase():
+            teamLeader.value = "   ";
+            adminAssistant.value = "IXC";
+            break;
+        case "MEF".toLowerCase():
+        case "MEF".toUpperCase():
+            teamLeader.value = "   ";
+            adminAssistant.value = "KXP";
+            break;
+        case "LMA".toLowerCase():
+        case "LMA".toUpperCase():
+            teamLeader.value = "   ";
+            adminAssistant.value = "RXW";
+            break;
+        case "HXP".toLowerCase():
+        case "HXP".toUpperCase():
+            teamLeader.value = "TMO";
+            adminAssistant.value = "IXC";
+            break;
+        case "KKM".toLowerCase():
+        case "KKM".toUpperCase():
+            teamLeader.value = "TMO";
+            adminAssistant.value = "IXC";
+            break;
+        case "NVP".toLowerCase():
+        case "NVP".toUpperCase():
+            teamLeader.value = "MEF";
+            adminAssistant.value = "KXP";
+            break;
+        case "SZT".toLowerCase():
+        case "SZT".toUpperCase():
+            teamLeader.value = "MEF";
+            adminAssistant.value = "KXP";
+            break;
+        case "DMP".toLowerCase():
+        case "DMP".toUpperCase():
+            teamLeader.value = "LMA";
+            adminAssistant.value = "RXW";
+            break;
+        case "SXB".toLowerCase():
+        case "SXB".toUpperCase():
+            teamLeader.value = "LMA";
+            adminAssistant.value = "RXW";
+            break;
+        case "LAM".toLowerCase():
+        case "LAM".toUpperCase():
+            teamLeader.value = "CYS";
+            adminAssistant.value = "RXB";
+            break;
+        case "NHM".toLowerCase():
+        case "NHM".toUpperCase():
+            teamLeader.value = "CYS";
+            adminAssistant.value = "RXB";
+            break;
+        case "NXA".toLowerCase():
+        case "NXA".toUpperCase():
+            teamLeader.value = "TMO";
+            adminAssistant.value = "JXW";
+            break;
+        case "RHH".toLowerCase():
+        case "RHH".toUpperCase():
+            teamLeader.value = "TMO";
+            adminAssistant.value = "JXW";
+            break;
+        case "VSA".toLowerCase():
+        case "VSA".toUpperCase():
+            teamLeader.value = "TMO";
+            adminAssistant.value = "JXW";
+            break;
+        case "RMF".toLowerCase():
+        case "RMF".toUpperCase():
+            teamLeader.value = "TMO";
+            adminAssistant.value = "OXO";
+            break;
+        case "RYE".toLowerCase():
+        case "RYE".toUpperCase():
+            teamLeader.value = "TMO";
+            adminAssistant.value = "OXO";
+            break;
+        case "BJT".toLowerCase():
+        case "BJT".toUpperCase():
+            teamLeader.value = "MEF";
+            adminAssistant.value = "NXL";
+            break;
+        case "CYM".toLowerCase():
+        case "CYM".toUpperCase():
+            teamLeader.value = "MEF";
+            adminAssistant.value = "NXL";
+            break;
+        case "KDB".toLowerCase():
+        case "KDB".toUpperCase():
+            teamLeader.value = "MEF";
+            adminAssistant.value = "NXL";
+            break;
+        case "SXF".toLowerCase():
+        case "SXF".toUpperCase():
+            teamLeader.value = "MEF";
+            adminAssistant.value = "NXL";
+            break;
+        case "BYC".toLowerCase():
+        case "BYC".toUpperCase():
+            teamLeader.value = "CYS";
+            adminAssistant.value = "RXB";
+            break;
+        case "CZL".toLowerCase():
+        case "CZL".toUpperCase():
+            teamLeader.value = "CYS";
+            adminAssistant.value = "RXB";
+            break;
+        case "JNT".toLowerCase():
+        case "JNT".toUpperCase():
+            teamLeader.value = "CYS";
+            adminAssistant.value = "RXB";
+            break;
+        case "RXA".toLowerCase():
+        case "RXA".toUpperCase():
+            teamLeader.value = "CYS";
+            adminAssistant.value = "RXB";
+            break;
+        case "SXH".toLowerCase():
+        case "SXH".toUpperCase():
+            teamLeader.value = "ARD";
+            adminAssistant.value = "RXW";
+            break;
+        case "JML".toLowerCase():
+        case "JML".toUpperCase():
+            teamLeader.value = "CYS";
+            adminAssistant.value = "SWH";
+            break;
+        default:
+            teamLeader.value = "Incorrect Initials of Paralegal";
+            adminAssistant.value = "Incorrect Initials of Paralegal";
+            teamLeader.classList.add("text-red-500");
+            adminAssistant.classList.add("text-red-500");
+    }
+}

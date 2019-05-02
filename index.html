@@ -208,12 +208,12 @@
                     </label>
                     <label class="control control--radio"
                         >Post
-                        <input type="radio" name="radio-delivery" value="post" checked />
+                        <input type="radio" name="radio-delivery" value="post" checked id="radio-post" />
                         <div class="control__indicator"></div>
                     </label>
                     <label class="control control--radio"
                         >Email
-                        <input type="radio" name="radio-delivery" value="email"/>
+                        <input type="radio" name="radio-delivery" value="email" id="radio-email" />
                         <div class="control__indicator"></div>
                     </label>
                 </form>
@@ -1112,8 +1112,8 @@
                 <label class="block text-sm font-semibold">
                     Email / Post / DocuSign?
                 </label>
-                <p class="mt-1" id="">
-                    xx Post or Email xx
+                <p class="mt-1" id="email-or-post">
+                    1 - Post
                 </p>
 
                 <!-- if purchase -->
@@ -1154,7 +1154,7 @@
                     Send docs to Borrower?
                 </label>
                 <p class="mt-1">
-                    xx Yes or No xx
+                    Yes
                 </p>
 
                 <label class="block text-sm font-semibold mt-4">
