@@ -208,12 +208,23 @@
                     </label>
                     <label class="control control--radio"
                         >Post
-                        <input type="radio" name="radio-delivery" value="post" checked id="radio-post" />
+                        <input
+                            type="radio"
+                            name="radio-delivery"
+                            value="post"
+                            checked
+                            id="radio-post"
+                        />
                         <div class="control__indicator"></div>
                     </label>
                     <label class="control control--radio"
                         >Email
-                        <input type="radio" name="radio-delivery" value="email" id="radio-email" />
+                        <input
+                            type="radio"
+                            name="radio-delivery"
+                            value="email"
+                            id="radio-email"
+                        />
                         <div class="control__indicator"></div>
                     </label>
                 </form>
@@ -291,151 +302,695 @@
                 >
                     Title Search
                 </h2>
-                <form class="flex flex-col">
-                    <label class="block text-sm font-semibold">
-                        State
-                    </label>
-                    <div class="relative">
-                        <select
-                            class="block appearance-none w-full bg-gray-200 text-gray-700 py-1 px-2 rounded focus:outline-none focus:bg-white"
-                            id="select-state"
-                        >
-                            <option>-- Select State --</option>
-                            <option>QLD</option>
-                            <option>NSW</option>
-                            <option>VIC</option>
-                            <option>SA</option>
-                            <option>TAS</option>
-                            <option>WA</option>
-                            <option>ACT</option>
-                            <option>NT</option>
-                        </select>
-                        <div
-                            class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700"
-                        >
-                            <svg
-                                class="fill-current h-4 w-4"
-                                xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 20 20"
-                            >
-                                <path
-                                    d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
-                                />
-                            </svg>
-                        </div>
+                <div id="security-list">
+                    <div id="security-1">
+                        <h3 class="font-semibold tracking-wide mb-2">
+                            Security 1
+                        </h3>
+                        <form class="flex flex-col">
+                            <label class="block text-sm font-semibold">
+                                State
+                            </label>
+                            <div class="relative">
+                                <select
+                                    class="block appearance-none w-full bg-gray-200 text-gray-700 py-1 px-2 rounded focus:outline-none focus:bg-white"
+                                    id="select-state"
+                                >
+                                    <option value="default-state"
+                                        >-- Select State --</option
+                                    >
+                                    <option value="qld-state">QLD</option>
+                                    <option value="nsw-state">NSW</option>
+                                    <option value="vic-state">VIC</option>
+                                    <option value="sa-state">SA</option>
+                                    <option value="tas-state">TAS</option>
+                                    <option value="wa-state">WA</option>
+                                    <option value="act-state">ACT</option>
+                                    <option value="nt-state">NT</option>
+                                </select>
+                                <div
+                                    class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700"
+                                >
+                                    <svg
+                                        class="fill-current h-4 w-4"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 20 20"
+                                    >
+                                        <path
+                                            d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                                        />
+                                    </svg>
+                                </div>
+                            </div>
+
+                            <label class="block text-sm font-semibold mt-4">
+                                Unregistered / Proposed
+                            </label>
+                            <label class="control control--checkbox"
+                                >No Title Search
+                                <input type="checkbox" />
+                                <div class="control__indicator"></div>
+                            </label>
+
+                            <!-- if QLD -->
+                            <div class="hidden" id="if-qld">
+                                <form>
+                                    <label
+                                        class="block text-sm font-semibold mt-2"
+                                    >
+                                        Title Reference
+                                    </label>
+                                    <input
+                                        class="bg-gray-200 rounded w-full py-1 px-2 focus:outline-none focus:bg-white mb-2"
+                                        id="title-reference"
+                                        type="text"
+                                        placeholder="12345678"
+                                    />
+                                    <label
+                                        class="block text-sm font-semibold mt-2"
+                                    >
+                                        Other Particulars
+                                    </label>
+                                    <input
+                                        class="bg-gray-200 rounded w-full py-1 px-2 focus:outline-none focus:bg-white mb-2"
+                                        id="other-particulars"
+                                        type="text"
+                                        placeholder="Lot 12 on PS 345678"
+                                    />
+                                </form>
+                            </div>
+                            <!-- if NSW -->
+                            <div class="hidden" id="if-nsw">
+                                <form>
+                                    <label
+                                        class="block text-sm font-semibold mt-2"
+                                    >
+                                        Folio Identifier
+                                    </label>
+                                    <input
+                                        class="bg-gray-200 rounded w-full py-1 px-2 focus:outline-none focus:bg-white mb-2"
+                                        id="folio-identifier"
+                                        type="text"
+                                        placeholder="12/345678"
+                                    />
+                                </form>
+                            </div>
+                            <!-- if VIC/SA/TAS -->
+                            <div class="hidden" id="if-vic-sa-tas">
+                                <form>
+                                    <label
+                                        class="block text-sm font-semibold mt-2"
+                                    >
+                                        Volume
+                                    </label>
+                                    <input
+                                        class="bg-gray-200 rounded w-full py-1 px-2 focus:outline-none focus:bg-white mb-2"
+                                        id="Volume"
+                                        type="text"
+                                        placeholder="12345"
+                                    />
+                                    <label
+                                        class="block text-sm font-semibold mt-2"
+                                    >
+                                        Folio
+                                    </label>
+                                    <input
+                                        class="bg-gray-200 rounded w-full py-1 px-2 focus:outline-none focus:bg-white mb-2"
+                                        id="Folio"
+                                        type="text"
+                                        placeholder="123"
+                                    />
+                                    <label
+                                        class="block text-sm font-semibold mt-2"
+                                    >
+                                        Other Particulars
+                                    </label>
+                                    <input
+                                        class="bg-gray-200 rounded w-full py-1 px-2 focus:outline-none focus:bg-white mb-2"
+                                        id="other-particulars"
+                                        type="text"
+                                        placeholder="Lot 12 on PS 345678"
+                                    />
+                                </form>
+                            </div>
+
+                            <label class="block text-sm font-semibold mt-2">
+                                Clear Title
+                            </label>
+                            <label class="control control--checkbox"
+                                >No Mortgagee
+                                <input type="checkbox" />
+                                <div class="control__indicator"></div>
+                            </label>
+
+                            <label class="block text-sm font-semibold mt-4">
+                                Mortgage Number
+                            </label>
+                            <input
+                                class="bg-gray-200 rounded w-full py-1 px-2 focus:outline-none focus:bg-white mb-2"
+                                id="mortgage number"
+                                type="text"
+                                placeholder="Mortgage Number"
+                            />
+
+                            <label class="block text-sm font-semibold mt-2">
+                                Mortgagee
+                            </label>
+                            <input
+                                class="bg-gray-200 rounded w-full py-1 px-2 focus:outline-none focus:bg-white mb-2"
+                                id="mortgagee"
+                                type="text"
+                                placeholder="Mortgagee"
+                            />
+
+                            <label class="block text-sm font-semibold mt-2">
+                                CT
+                            </label>
+                            <label class="control control--checkbox"
+                                >CT Required?
+                                <input type="checkbox" />
+                                <div class="control__indicator"></div>
+                            </label>
+                        </form>
                     </div>
+                    <div id="security-2">
+                        <h3 class="font-semibold tracking-wide mb-2 mt-10">
+                            Security 2
+                        </h3>
+                        <form class="flex flex-col">
+                            <label class="block text-sm font-semibold">
+                                State
+                            </label>
+                            <div class="relative">
+                                <select
+                                    class="block appearance-none w-full bg-gray-200 text-gray-700 py-1 px-2 rounded focus:outline-none focus:bg-white"
+                                    id="select-state"
+                                >
+                                    <option value="default-state"
+                                        >-- Select State --</option
+                                    >
+                                    <option value="qld-state">QLD</option>
+                                    <option value="nsw-state">NSW</option>
+                                    <option value="vic-state">VIC</option>
+                                    <option value="sa-state">SA</option>
+                                    <option value="tas-state">TAS</option>
+                                    <option value="wa-state">WA</option>
+                                    <option value="act-state">ACT</option>
+                                    <option value="nt-state">NT</option>
+                                </select>
+                                <div
+                                    class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700"
+                                >
+                                    <svg
+                                        class="fill-current h-4 w-4"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 20 20"
+                                    >
+                                        <path
+                                            d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                                        />
+                                    </svg>
+                                </div>
+                            </div>
 
-                    <label class="block text-sm font-semibold mt-4">
-                        Unregistered / Proposed
-                    </label>
-                    <label class="control control--checkbox"
-                        >No Title Search
-                        <input type="checkbox" />
-                        <div class="control__indicator"></div>
-                    </label>
+                            <label class="block text-sm font-semibold mt-4">
+                                Unregistered / Proposed
+                            </label>
+                            <label class="control control--checkbox"
+                                >No Title Search
+                                <input type="checkbox" />
+                                <div class="control__indicator"></div>
+                            </label>
 
-                    <!-- if QLD -->
-                    <form id="if-qld">
-                        <label class="block text-sm font-semibold mt-2">
-                            Title Reference
-                        </label>
-                        <input
-                            class="bg-gray-200 rounded w-full py-1 px-2 focus:outline-none focus:bg-white mb-2"
-                            id="title-reference"
-                            type="text"
-                            placeholder="12345678"
-                        />
-                        <label class="block text-sm font-semibold mt-2">
-                            Other Particulars
-                        </label>
-                        <input
-                            class="bg-gray-200 rounded w-full py-1 px-2 focus:outline-none focus:bg-white mb-2"
-                            id="other-particulars"
-                            type="text"
-                            placeholder="Lot 12 on PS 345678"
-                        />
-                    </form>
-                    <!-- if NSW -->
-                    <form id="if-nsw">
-                        <label class="block text-sm font-semibold mt-2">
-                            Folio Identifier
-                        </label>
-                        <input
-                            class="bg-gray-200 rounded w-full py-1 px-2 focus:outline-none focus:bg-white mb-2"
-                            id="folio-identifier"
-                            type="text"
-                            placeholder="12/345678"
-                        />
-                    </form>
-                    <!-- if VIC/SA/TAS -->
-                    <form id="if-vic">
-                        <label class="block text-sm font-semibold mt-2">
-                            Volume
-                        </label>
-                        <input
-                            class="bg-gray-200 rounded w-full py-1 px-2 focus:outline-none focus:bg-white mb-2"
-                            id="Volume"
-                            type="text"
-                            placeholder="12345"
-                        />
-                        <label class="block text-sm font-semibold mt-2">
-                            Folio
-                        </label>
-                        <input
-                            class="bg-gray-200 rounded w-full py-1 px-2 focus:outline-none focus:bg-white mb-2"
-                            id="Folio"
-                            type="text"
-                            placeholder="123"
-                        />
-                        <label class="block text-sm font-semibold mt-2">
-                            Other Particulars
-                        </label>
-                        <input
-                            class="bg-gray-200 rounded w-full py-1 px-2 focus:outline-none focus:bg-white mb-2"
-                            id="other-particulars"
-                            type="text"
-                            placeholder="Lot 12 on PS 345678"
-                        />
-                    </form>
+                            <!-- if QLD -->
+                            <div class="hidden" id="if-qld">
+                                <form>
+                                    <label
+                                        class="block text-sm font-semibold mt-2"
+                                    >
+                                        Title Reference
+                                    </label>
+                                    <input
+                                        class="bg-gray-200 rounded w-full py-1 px-2 focus:outline-none focus:bg-white mb-2"
+                                        id="title-reference"
+                                        type="text"
+                                        placeholder="12345678"
+                                    />
+                                    <label
+                                        class="block text-sm font-semibold mt-2"
+                                    >
+                                        Other Particulars
+                                    </label>
+                                    <input
+                                        class="bg-gray-200 rounded w-full py-1 px-2 focus:outline-none focus:bg-white mb-2"
+                                        id="other-particulars"
+                                        type="text"
+                                        placeholder="Lot 12 on PS 345678"
+                                    />
+                                </form>
+                            </div>
+                            <!-- if NSW -->
+                            <div class="hidden" id="if-nsw">
+                                <form>
+                                    <label
+                                        class="block text-sm font-semibold mt-2"
+                                    >
+                                        Folio Identifier
+                                    </label>
+                                    <input
+                                        class="bg-gray-200 rounded w-full py-1 px-2 focus:outline-none focus:bg-white mb-2"
+                                        id="folio-identifier"
+                                        type="text"
+                                        placeholder="12/345678"
+                                    />
+                                </form>
+                            </div>
+                            <!-- if VIC/SA/TAS -->
+                            <div class="hidden" id="if-vic-sa-tas">
+                                <form>
+                                    <label
+                                        class="block text-sm font-semibold mt-2"
+                                    >
+                                        Volume
+                                    </label>
+                                    <input
+                                        class="bg-gray-200 rounded w-full py-1 px-2 focus:outline-none focus:bg-white mb-2"
+                                        id="Volume"
+                                        type="text"
+                                        placeholder="12345"
+                                    />
+                                    <label
+                                        class="block text-sm font-semibold mt-2"
+                                    >
+                                        Folio
+                                    </label>
+                                    <input
+                                        class="bg-gray-200 rounded w-full py-1 px-2 focus:outline-none focus:bg-white mb-2"
+                                        id="Folio"
+                                        type="text"
+                                        placeholder="123"
+                                    />
+                                    <label
+                                        class="block text-sm font-semibold mt-2"
+                                    >
+                                        Other Particulars
+                                    </label>
+                                    <input
+                                        class="bg-gray-200 rounded w-full py-1 px-2 focus:outline-none focus:bg-white mb-2"
+                                        id="other-particulars"
+                                        type="text"
+                                        placeholder="Lot 12 on PS 345678"
+                                    />
+                                </form>
+                            </div>
 
-                    <label class="block text-sm font-semibold mt-2">
-                        Clear Title
-                    </label>
-                    <label class="control control--checkbox"
-                        >No Mortgagee
-                        <input type="checkbox" />
-                        <div class="control__indicator"></div>
-                    </label>
+                            <label class="block text-sm font-semibold mt-2">
+                                Clear Title
+                            </label>
+                            <label class="control control--checkbox"
+                                >No Mortgagee
+                                <input type="checkbox" />
+                                <div class="control__indicator"></div>
+                            </label>
 
-                    <label class="block text-sm font-semibold mt-4">
-                        Mortgage Number
-                    </label>
-                    <input
-                        class="bg-gray-200 rounded w-full py-1 px-2 focus:outline-none focus:bg-white mb-2"
-                        id="mortgage number"
-                        type="text"
-                        placeholder="Mortgage Number"
-                    />
+                            <label class="block text-sm font-semibold mt-4">
+                                Mortgage Number
+                            </label>
+                            <input
+                                class="bg-gray-200 rounded w-full py-1 px-2 focus:outline-none focus:bg-white mb-2"
+                                id="mortgage number"
+                                type="text"
+                                placeholder="Mortgage Number"
+                            />
 
-                    <label class="block text-sm font-semibold mt-2">
-                        Mortgagee
-                    </label>
-                    <input
-                        class="bg-gray-200 rounded w-full py-1 px-2 focus:outline-none focus:bg-white mb-2"
-                        id="mortgagee"
-                        type="text"
-                        placeholder="Mortgagee"
-                    />
+                            <label class="block text-sm font-semibold mt-2">
+                                Mortgagee
+                            </label>
+                            <input
+                                class="bg-gray-200 rounded w-full py-1 px-2 focus:outline-none focus:bg-white mb-2"
+                                id="mortgagee"
+                                type="text"
+                                placeholder="Mortgagee"
+                            />
 
-                    <label class="block text-sm font-semibold mt-2">
-                        CT
-                    </label>
-                    <label class="control control--checkbox"
-                        >CT Required?
-                        <input type="checkbox" />
-                        <div class="control__indicator"></div>
-                    </label>
-                </form>
+                            <label class="block text-sm font-semibold mt-2">
+                                CT
+                            </label>
+                            <label class="control control--checkbox"
+                                >CT Required?
+                                <input type="checkbox" />
+                                <div class="control__indicator"></div>
+                            </label>
+                        </form>
+                    </div>
+                    <div id="security-3">
+                        <h3 class="font-semibold tracking-wide mb-2 mt-10">
+                            Security 3
+                        </h3>
+                        <form class="flex flex-col">
+                            <label class="block text-sm font-semibold">
+                                State
+                            </label>
+                            <div class="relative">
+                                <select
+                                    class="block appearance-none w-full bg-gray-200 text-gray-700 py-1 px-2 rounded focus:outline-none focus:bg-white"
+                                    id="select-state"
+                                >
+                                    <option value="default-state"
+                                        >-- Select State --</option
+                                    >
+                                    <option value="qld-state">QLD</option>
+                                    <option value="nsw-state">NSW</option>
+                                    <option value="vic-state">VIC</option>
+                                    <option value="sa-state">SA</option>
+                                    <option value="tas-state">TAS</option>
+                                    <option value="wa-state">WA</option>
+                                    <option value="act-state">ACT</option>
+                                    <option value="nt-state">NT</option>
+                                </select>
+                                <div
+                                    class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700"
+                                >
+                                    <svg
+                                        class="fill-current h-4 w-4"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 20 20"
+                                    >
+                                        <path
+                                            d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                                        />
+                                    </svg>
+                                </div>
+                            </div>
+
+                            <label class="block text-sm font-semibold mt-4">
+                                Unregistered / Proposed
+                            </label>
+                            <label class="control control--checkbox"
+                                >No Title Search
+                                <input type="checkbox" />
+                                <div class="control__indicator"></div>
+                            </label>
+
+                            <!-- if QLD -->
+                            <div class="hidden" id="if-qld">
+                                <form>
+                                    <label
+                                        class="block text-sm font-semibold mt-2"
+                                    >
+                                        Title Reference
+                                    </label>
+                                    <input
+                                        class="bg-gray-200 rounded w-full py-1 px-2 focus:outline-none focus:bg-white mb-2"
+                                        id="title-reference"
+                                        type="text"
+                                        placeholder="12345678"
+                                    />
+                                    <label
+                                        class="block text-sm font-semibold mt-2"
+                                    >
+                                        Other Particulars
+                                    </label>
+                                    <input
+                                        class="bg-gray-200 rounded w-full py-1 px-2 focus:outline-none focus:bg-white mb-2"
+                                        id="other-particulars"
+                                        type="text"
+                                        placeholder="Lot 12 on PS 345678"
+                                    />
+                                </form>
+                            </div>
+                            <!-- if NSW -->
+                            <div class="hidden" id="if-nsw">
+                                <form>
+                                    <label
+                                        class="block text-sm font-semibold mt-2"
+                                    >
+                                        Folio Identifier
+                                    </label>
+                                    <input
+                                        class="bg-gray-200 rounded w-full py-1 px-2 focus:outline-none focus:bg-white mb-2"
+                                        id="folio-identifier"
+                                        type="text"
+                                        placeholder="12/345678"
+                                    />
+                                </form>
+                            </div>
+                            <!-- if VIC/SA/TAS -->
+                            <div class="hidden" id="if-vic-sa-tas">
+                                <form>
+                                    <label
+                                        class="block text-sm font-semibold mt-2"
+                                    >
+                                        Volume
+                                    </label>
+                                    <input
+                                        class="bg-gray-200 rounded w-full py-1 px-2 focus:outline-none focus:bg-white mb-2"
+                                        id="Volume"
+                                        type="text"
+                                        placeholder="12345"
+                                    />
+                                    <label
+                                        class="block text-sm font-semibold mt-2"
+                                    >
+                                        Folio
+                                    </label>
+                                    <input
+                                        class="bg-gray-200 rounded w-full py-1 px-2 focus:outline-none focus:bg-white mb-2"
+                                        id="Folio"
+                                        type="text"
+                                        placeholder="123"
+                                    />
+                                    <label
+                                        class="block text-sm font-semibold mt-2"
+                                    >
+                                        Other Particulars
+                                    </label>
+                                    <input
+                                        class="bg-gray-200 rounded w-full py-1 px-2 focus:outline-none focus:bg-white mb-2"
+                                        id="other-particulars"
+                                        type="text"
+                                        placeholder="Lot 12 on PS 345678"
+                                    />
+                                </form>
+                            </div>
+
+                            <label class="block text-sm font-semibold mt-2">
+                                Clear Title
+                            </label>
+                            <label class="control control--checkbox"
+                                >No Mortgagee
+                                <input type="checkbox" />
+                                <div class="control__indicator"></div>
+                            </label>
+
+                            <label class="block text-sm font-semibold mt-4">
+                                Mortgage Number
+                            </label>
+                            <input
+                                class="bg-gray-200 rounded w-full py-1 px-2 focus:outline-none focus:bg-white mb-2"
+                                id="mortgage number"
+                                type="text"
+                                placeholder="Mortgage Number"
+                            />
+
+                            <label class="block text-sm font-semibold mt-2">
+                                Mortgagee
+                            </label>
+                            <input
+                                class="bg-gray-200 rounded w-full py-1 px-2 focus:outline-none focus:bg-white mb-2"
+                                id="mortgagee"
+                                type="text"
+                                placeholder="Mortgagee"
+                            />
+
+                            <label class="block text-sm font-semibold mt-2">
+                                CT
+                            </label>
+                            <label class="control control--checkbox"
+                                >CT Required?
+                                <input type="checkbox" />
+                                <div class="control__indicator"></div>
+                            </label>
+                        </form>
+                    </div>
+                    <div id="security-4">
+                        <h3 class="font-semibold tracking-wide mb-2 mt-10">
+                            Security 4
+                        </h3>
+                        <form class="flex flex-col">
+                            <label class="block text-sm font-semibold">
+                                State
+                            </label>
+                            <div class="relative">
+                                <select
+                                    class="block appearance-none w-full bg-gray-200 text-gray-700 py-1 px-2 rounded focus:outline-none focus:bg-white"
+                                    id="select-state"
+                                >
+                                    <option value="default-state"
+                                        >-- Select State --</option
+                                    >
+                                    <option value="qld-state">QLD</option>
+                                    <option value="nsw-state">NSW</option>
+                                    <option value="vic-state">VIC</option>
+                                    <option value="sa-state">SA</option>
+                                    <option value="tas-state">TAS</option>
+                                    <option value="wa-state">WA</option>
+                                    <option value="act-state">ACT</option>
+                                    <option value="nt-state">NT</option>
+                                </select>
+                                <div
+                                    class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700"
+                                >
+                                    <svg
+                                        class="fill-current h-4 w-4"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 20 20"
+                                    >
+                                        <path
+                                            d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                                        />
+                                    </svg>
+                                </div>
+                            </div>
+
+                            <label class="block text-sm font-semibold mt-4">
+                                Unregistered / Proposed
+                            </label>
+                            <label class="control control--checkbox"
+                                >No Title Search
+                                <input type="checkbox" />
+                                <div class="control__indicator"></div>
+                            </label>
+
+                            <!-- if QLD -->
+                            <div class="hidden" id="if-qld">
+                                <form>
+                                    <label
+                                        class="block text-sm font-semibold mt-2"
+                                    >
+                                        Title Reference
+                                    </label>
+                                    <input
+                                        class="bg-gray-200 rounded w-full py-1 px-2 focus:outline-none focus:bg-white mb-2"
+                                        id="title-reference"
+                                        type="text"
+                                        placeholder="12345678"
+                                    />
+                                    <label
+                                        class="block text-sm font-semibold mt-2"
+                                    >
+                                        Other Particulars
+                                    </label>
+                                    <input
+                                        class="bg-gray-200 rounded w-full py-1 px-2 focus:outline-none focus:bg-white mb-2"
+                                        id="other-particulars"
+                                        type="text"
+                                        placeholder="Lot 12 on PS 345678"
+                                    />
+                                </form>
+                            </div>
+                            <!-- if NSW -->
+                            <div class="hidden" id="if-nsw">
+                                <form>
+                                    <label
+                                        class="block text-sm font-semibold mt-2"
+                                    >
+                                        Folio Identifier
+                                    </label>
+                                    <input
+                                        class="bg-gray-200 rounded w-full py-1 px-2 focus:outline-none focus:bg-white mb-2"
+                                        id="folio-identifier"
+                                        type="text"
+                                        placeholder="12/345678"
+                                    />
+                                </form>
+                            </div>
+                            <!-- if VIC/SA/TAS -->
+                            <div class="hidden" id="if-vic-sa-tas">
+                                <form>
+                                    <label
+                                        class="block text-sm font-semibold mt-2"
+                                    >
+                                        Volume
+                                    </label>
+                                    <input
+                                        class="bg-gray-200 rounded w-full py-1 px-2 focus:outline-none focus:bg-white mb-2"
+                                        id="Volume"
+                                        type="text"
+                                        placeholder="12345"
+                                    />
+                                    <label
+                                        class="block text-sm font-semibold mt-2"
+                                    >
+                                        Folio
+                                    </label>
+                                    <input
+                                        class="bg-gray-200 rounded w-full py-1 px-2 focus:outline-none focus:bg-white mb-2"
+                                        id="Folio"
+                                        type="text"
+                                        placeholder="123"
+                                    />
+                                    <label
+                                        class="block text-sm font-semibold mt-2"
+                                    >
+                                        Other Particulars
+                                    </label>
+                                    <input
+                                        class="bg-gray-200 rounded w-full py-1 px-2 focus:outline-none focus:bg-white mb-2"
+                                        id="other-particulars"
+                                        type="text"
+                                        placeholder="Lot 12 on PS 345678"
+                                    />
+                                </form>
+                            </div>
+
+                            <label class="block text-sm font-semibold mt-2">
+                                Clear Title
+                            </label>
+                            <label class="control control--checkbox"
+                                >No Mortgagee
+                                <input type="checkbox" />
+                                <div class="control__indicator"></div>
+                            </label>
+
+                            <label class="block text-sm font-semibold mt-4">
+                                Mortgage Number
+                            </label>
+                            <input
+                                class="bg-gray-200 rounded w-full py-1 px-2 focus:outline-none focus:bg-white mb-2"
+                                id="mortgage number"
+                                type="text"
+                                placeholder="Mortgage Number"
+                            />
+
+                            <label class="block text-sm font-semibold mt-2">
+                                Mortgagee
+                            </label>
+                            <input
+                                class="bg-gray-200 rounded w-full py-1 px-2 focus:outline-none focus:bg-white mb-2"
+                                id="mortgagee"
+                                type="text"
+                                placeholder="Mortgagee"
+                            />
+
+                            <label class="block text-sm font-semibold mt-2">
+                                CT
+                            </label>
+                            <label class="control control--checkbox"
+                                >CT Required?
+                                <input type="checkbox" />
+                                <div class="control__indicator"></div>
+                            </label>
+                        </form>
+                    </div>
+                </div>
+                <button
+                    class="bg-gray-700 hover:bg-white hover:text-gray-700 focus:outline-none text-white text-sm font-semibold py-1 rounded w-full mt-4"
+                    id="add-security-btn"
+                    type="button"
+                >
+                    Add Security
+                </button>
             </div>
 
             <!-- back / next -->
@@ -521,23 +1076,32 @@
                         placeholder="001234-005678"
                     />
 
-                    <label class="block text-sm font-semibold mt-4">
-                        Borrower 1
-                    </label>
-                    <input
-                        class="bg-gray-200 rounded w-full py-1 px-2 focus:outline-none focus:bg-white"
-                        id="borrower-name"
-                        type="text"
-                        placeholder="Name"
-                    />
-                    <input
-                        class="bg-gray-200 rounded w-full py-1 px-2 focus:outline-none focus:bg-white"
-                        id="borrower-address"
-                        type="text"
-                        placeholder="Address"
-                    />
+                    <ul id="borrowers-ul">
+                        <li>
+                            <label
+                                class="block text-sm font-semibold mt-4"
+                                id="borrower-one"
+                            >
+                                Borrower 1
+                            </label>
+
+                            <input
+                                class="bg-gray-200 rounded w-full py-1 px-2 focus:outline-none focus:bg-white"
+                                id="borrower-1-name"
+                                type="text"
+                                placeholder="Name"
+                            />
+                            <input
+                                class="bg-gray-200 rounded w-full py-1 px-2 focus:outline-none focus:bg-white"
+                                id="borrower-1-address"
+                                type="text"
+                                placeholder="Address"
+                            />
+                        </li>
+                    </ul>
                     <button
-                        class="bg-gray-700 hover:bg-white hover:text-gray-700 focus:bg-white focus:text-gray-700 focus:outline-none text-white text-sm font-semibold focus:outline-none py-1 rounded w-full"
+                        class="bg-gray-700 hover:bg-white hover:text-gray-700 focus:outline-none text-white text-sm font-semibold py-1 rounded w-full"
+                        id="add-borrower-btn"
                         type="button"
                     >
                         Add Borrower
@@ -1098,7 +1662,8 @@
             <!-- Header -->
             <section>
                 <h1
-                    class="text-center text-xl font-semibold tracking-wide mt-10 mb-8" id="main-header"
+                    class="text-center text-xl font-semibold tracking-wide mt-10 mb-8"
+                    id="main-header"
                 >
                     xx Matter Number - Borrower's Name xx
                 </h1>
@@ -1117,7 +1682,7 @@
                 </p>
 
                 <!-- if purchase -->
-                <div class="if-purchase">
+                <div id="purchase-box">
                     <label class="block text-sm font-semibold mt-4">
                         Borrower Solicitors
                     </label>
@@ -1125,7 +1690,7 @@
                         class="bg-white border border-gray-700 rounded w-full py-1 px-2 focus:outline-none cursor-not-allowed focus:bg-white"
                         id="borrower-solicitors"
                         type="text"
-                        value="xxx"
+                        value=""
                         disabled
                     />
                     <label class="block text-sm font-semibold mt-4">
@@ -1135,7 +1700,7 @@
                         class="bg-white border border-gray-700 rounded w-full py-1 px-2 focus:outline-none cursor-not-allowed focus:bg-white"
                         id="solicitor-contact-name"
                         type="text"
-                        value="xxx"
+                        value=""
                         disabled
                     />
                     <label class="block text-sm font-semibold mt-4">
@@ -1143,9 +1708,9 @@
                     </label>
                     <input
                         class="bg-white border border-gray-700 rounded w-full py-1 px-2 focus:outline-none cursor-not-allowed focus:bg-white"
-                        id="solicitor-email"
+                        id="solicitor-contact-email"
                         type="text"
-                        value="xxx"
+                        value=""
                         disabled
                     />
                 </div>

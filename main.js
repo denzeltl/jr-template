@@ -41,11 +41,26 @@ const backBtnCos = document.getElementById("back-btn-cos");
 
 const upDownArrow = document.querySelectorAll(".arrow-up");
 
-// input variables
+// matter email input
 const matterNumber = document.getElementById("matter-number");
 const radioEmail = document.getElementById("radio-email");
 const radioPost = document.getElementById("radio-post");
 const author = document.getElementById("author");
+
+// title search input
+
+// coa input
+const loanPurpose = document.getElementById("loan-purpose");
+const borrowerOneName = document.getElementById("borrower-1-name");
+const borrowerOneAddress = document.getElementById("borrower-1-address");
+const borrowersList = document.getElementById("borrowers-ul");
+const borrowersArray = borrowersList.children;
+const addBorrower = document.getElementById("add-borrower-btn");
+
+// title search input
+document.getElementById("select-state").addEventListener("change", selectState);
+
+// cos input
 
 // general tab variables
 const mainHeader = document.getElementById("main-header");
@@ -72,7 +87,7 @@ backBtnCoa.addEventListener("click", backBtn);
 nextBtnSolIns.addEventListener("click", nextBtn);
 backBtnSolIns.addEventListener("click", backBtn);
 
-nextBtnValRep.addEventListener("click", nextBtn);
+nextBtnValRep.addEventListener("click", valRepNextBtn);
 backBtnValRep.addEventListener("click", backBtn);
 
 finishBtnRatesNotice.addEventListener("click", finishBtn);
@@ -85,11 +100,26 @@ for (let i = 0; i < upDownArrow.length; i++) {
     upDownArrow[i].addEventListener("click", arrowUpDown);
 }
 
+addBorrower.addEventListener("click", addAnotherBorrower);
+
 // general tab logic
 matterNumber.addEventListener("blur", pasteMatterNumber);
 radioEmail.addEventListener("change", emailRadio);
 radioPost.addEventListener("change", postRadio);
 author.addEventListener("blur", authorLeadAndAss);
+loanPurpose.addEventListener("blur", refiOrPurchase);
+document
+    .getElementById("solicitor")
+    .addEventListener("blur", pasteBorrowerSolicitor);
+document
+    .getElementById("contact-name")
+    .addEventListener("blur", pasteContactName);
+document
+    .getElementById("contact-email")
+    .addEventListener("blur", pastecontactEmail);
+
+// security tab logic
+borrowersList.addEventListener("click", removeBorrower);
 
 // FUNCTIONS
 
@@ -135,6 +165,24 @@ function nextBtn(e) {
     e.target.parentElement.parentElement.parentElement.nextElementSibling.classList.remove(
         "hidden"
     );
+}
+
+function valRepNextBtn(e) {
+    if (loanPurpose.value.toLowerCase().indexOf("refinance") !== -1) {
+        e.target.parentElement.parentElement.parentElement.classList.add(
+            "hidden"
+        );
+        e.target.parentElement.parentElement.parentElement.nextElementSibling.classList.remove(
+            "hidden"
+        );
+    } else if (loanPurpose.value.toLowerCase().indexOf("purchase") !== -1) {
+        e.target.parentElement.parentElement.parentElement.classList.add(
+            "hidden"
+        );
+        e.target.parentElement.parentElement.parentElement.nextElementSibling.nextElementSibling.classList.remove(
+            "hidden"
+        );
+    }
 }
 
 function backBtn(e) {
@@ -184,12 +232,114 @@ function pasteMatterNumber(e) {
     mainHeader.textContent = e.target.value;
 }
 
+function refiOrPurchase(e) {
+    if (e.target.value.toLowerCase().indexOf("refinance") !== -1) {
+        document.getElementById("purchase-box").classList.add("hidden");
+    } else if (e.target.value.toLowerCase().indexOf("purchase") !== -1) {
+        document.getElementById("purchase-box").classList.remove("hidden");
+    }
+}
+
 function postRadio(e) {
     if ((e.target.checked = true)) emailOrPost.textContent = "1 - Post";
 }
 
 function emailRadio(e) {
     if ((e.target.checked = true)) emailOrPost.textContent = "0 - Email";
+}
+
+function pasteBorrowerSolicitor(e) {
+    document.getElementById("borrower-solicitors").value = e.target.value;
+}
+
+function pasteContactName(e) {
+    document.getElementById("solicitor-contact-name").value = e.target.value;
+}
+
+function pastecontactEmail(e) {
+    document.getElementById("solicitor-contact-email").value = e.target.value;
+}
+
+// function for coa
+function addAnotherBorrower(e) {
+    // create elements
+    const li = document.createElement("li");
+    const label = document.createElement("label");
+    const span = document.createElement("span");
+    const inputName = document.createElement("input");
+    const inputAddress = document.createElement("input");
+    // create attributes
+    const input = document.createAttribute("input");
+    input.value = "text";
+    const placeholderName = document.createAttribute("placeholder");
+    placeholderName.value = "Name";
+    const input1 = document.createAttribute("input");
+    input1.value = "text";
+    const placeholderAddress = document.createAttribute("placeholder");
+    placeholderAddress.value = "Address";
+
+    // logic
+    label.className = "block text-sm font-semibold mt-4";
+    label.appendChild(
+        document.createTextNode("Borrower " + (borrowersArray.length + 1))
+    );
+    span.className =
+        "float-right cursor-pointer text-gray-600 hover:text-gray-700 pr-1";
+    span.appendChild(document.createTextNode("x"));
+    inputName.className =
+        "bg-gray-200 rounded w-full py-1 px-2 focus:outline-none focus:bg-white";
+    inputName.setAttributeNode(input);
+    inputName.setAttributeNode(placeholderName);
+    inputAddress.className =
+        "bg-gray-200 rounded w-full py-1 px-2 focus:outline-none focus:bg-white";
+    inputAddress.setAttributeNode(input1);
+    inputAddress.setAttributeNode(placeholderAddress);
+
+    // append child
+    li.appendChild(label);
+    label.appendChild(span);
+    li.appendChild(inputName);
+    li.appendChild(inputAddress);
+
+    borrowersList.appendChild(li);
+}
+
+function removeBorrower(e) {
+    if (e.target.classList.contains("float-right")) {
+        if (confirm("Remove Borrower?")) {
+            const li = e.target.parentElement.parentElement;
+
+            borrowersList.removeChild(li);
+        }
+    }
+}
+
+// states select option
+function selectState(e) {
+    switch (e.target.value) {
+        case "default-state":
+            document.getElementById("if-qld").classList.add("hidden");
+            document.getElementById("if-nsw").classList.add("hidden");
+            document.getElementById("if-vic-sa-tas").classList.add("hidden");
+            break;
+        case "qld-state":
+            document.getElementById("if-qld").classList.remove("hidden");
+            document.getElementById("if-nsw").classList.add("hidden");
+            document.getElementById("if-vic-sa-tas").classList.add("hidden");
+            break;
+        case "nsw-state":
+            document.getElementById("if-nsw").classList.remove("hidden");
+            document.getElementById("if-qld").classList.add("hidden");
+            document.getElementById("if-vic-sa-tas").classList.add("hidden");
+            break;
+        case "vic-state":
+        case "sa-state":
+        case "tas-state":
+            document.getElementById("if-vic-sa-tas").classList.remove("hidden");
+            document.getElementById("if-qld").classList.add("hidden");
+            document.getElementById("if-nsw").classList.add("hidden");
+            break;
+    }
 }
 
 // paralegal's leader and assistant
@@ -199,141 +349,197 @@ function authorLeadAndAss(e) {
         case "ARD".toUpperCase():
             teamLeader.value = "   ";
             adminAssistant.value = "KED";
+            teamLeader.classList.remove("text-red-500");
+            adminAssistant.classList.remove("text-red-500");
             break;
         case "CYS".toLowerCase():
         case "CYS".toUpperCase():
             teamLeader.value = "   ";
             adminAssistant.value = "RXB";
+            teamLeader.classList.remove("text-red-500");
+            adminAssistant.classList.remove("text-red-500");
             break;
         case "TMO".toLowerCase():
         case "TMO".toUpperCase():
             teamLeader.value = "   ";
             adminAssistant.value = "IXC";
+            teamLeader.classList.remove("text-red-500");
+            adminAssistant.classList.remove("text-red-500");
             break;
         case "MEF".toLowerCase():
         case "MEF".toUpperCase():
             teamLeader.value = "   ";
             adminAssistant.value = "KXP";
+            teamLeader.classList.remove("text-red-500");
+            adminAssistant.classList.remove("text-red-500");
             break;
         case "LMA".toLowerCase():
         case "LMA".toUpperCase():
             teamLeader.value = "   ";
             adminAssistant.value = "RXW";
+            teamLeader.classList.remove("text-red-500");
+            adminAssistant.classList.remove("text-red-500");
             break;
         case "HXP".toLowerCase():
         case "HXP".toUpperCase():
             teamLeader.value = "TMO";
             adminAssistant.value = "IXC";
+            teamLeader.classList.remove("text-red-500");
+            adminAssistant.classList.remove("text-red-500");
             break;
         case "KKM".toLowerCase():
         case "KKM".toUpperCase():
             teamLeader.value = "TMO";
             adminAssistant.value = "IXC";
+            teamLeader.classList.remove("text-red-500");
+            adminAssistant.classList.remove("text-red-500");
             break;
         case "NVP".toLowerCase():
         case "NVP".toUpperCase():
             teamLeader.value = "MEF";
             adminAssistant.value = "KXP";
+            teamLeader.classList.remove("text-red-500");
+            adminAssistant.classList.remove("text-red-500");
             break;
         case "SZT".toLowerCase():
         case "SZT".toUpperCase():
             teamLeader.value = "MEF";
             adminAssistant.value = "KXP";
+            teamLeader.classList.remove("text-red-500");
+            adminAssistant.classList.remove("text-red-500");
             break;
         case "DMP".toLowerCase():
         case "DMP".toUpperCase():
             teamLeader.value = "LMA";
             adminAssistant.value = "RXW";
+            teamLeader.classList.remove("text-red-500");
+            adminAssistant.classList.remove("text-red-500");
             break;
         case "SXB".toLowerCase():
         case "SXB".toUpperCase():
             teamLeader.value = "LMA";
             adminAssistant.value = "RXW";
+            teamLeader.classList.remove("text-red-500");
+            adminAssistant.classList.remove("text-red-500");
             break;
         case "LAM".toLowerCase():
         case "LAM".toUpperCase():
             teamLeader.value = "CYS";
-            adminAssistant.value = "RXB";
+            adminAssistant.value = "AYF";
+            teamLeader.classList.remove("text-red-500");
+            adminAssistant.classList.remove("text-red-500");
             break;
         case "NHM".toLowerCase():
         case "NHM".toUpperCase():
             teamLeader.value = "CYS";
-            adminAssistant.value = "RXB";
+            adminAssistant.value = "AYF";
+            teamLeader.classList.remove("text-red-500");
+            adminAssistant.classList.remove("text-red-500");
             break;
         case "NXA".toLowerCase():
         case "NXA".toUpperCase():
             teamLeader.value = "TMO";
             adminAssistant.value = "JXW";
+            teamLeader.classList.remove("text-red-500");
+            adminAssistant.classList.remove("text-red-500");
             break;
         case "RHH".toLowerCase():
         case "RHH".toUpperCase():
             teamLeader.value = "TMO";
             adminAssistant.value = "JXW";
+            teamLeader.classList.remove("text-red-500");
+            adminAssistant.classList.remove("text-red-500");
             break;
         case "VSA".toLowerCase():
         case "VSA".toUpperCase():
             teamLeader.value = "TMO";
             adminAssistant.value = "JXW";
+            teamLeader.classList.remove("text-red-500");
+            adminAssistant.classList.remove("text-red-500");
             break;
         case "RMF".toLowerCase():
         case "RMF".toUpperCase():
             teamLeader.value = "TMO";
             adminAssistant.value = "OXO";
+            teamLeader.classList.remove("text-red-500");
+            adminAssistant.classList.remove("text-red-500");
             break;
         case "RYE".toLowerCase():
         case "RYE".toUpperCase():
             teamLeader.value = "TMO";
             adminAssistant.value = "OXO";
+            teamLeader.classList.remove("text-red-500");
+            adminAssistant.classList.remove("text-red-500");
             break;
         case "BJT".toLowerCase():
         case "BJT".toUpperCase():
             teamLeader.value = "MEF";
             adminAssistant.value = "NXL";
+            teamLeader.classList.remove("text-red-500");
+            adminAssistant.classList.remove("text-red-500");
             break;
         case "CYM".toLowerCase():
         case "CYM".toUpperCase():
             teamLeader.value = "MEF";
             adminAssistant.value = "NXL";
+            teamLeader.classList.remove("text-red-500");
+            adminAssistant.classList.remove("text-red-500");
             break;
         case "KDB".toLowerCase():
         case "KDB".toUpperCase():
             teamLeader.value = "MEF";
             adminAssistant.value = "NXL";
+            teamLeader.classList.remove("text-red-500");
+            adminAssistant.classList.remove("text-red-500");
             break;
         case "SXF".toLowerCase():
         case "SXF".toUpperCase():
             teamLeader.value = "MEF";
             adminAssistant.value = "NXL";
+            teamLeader.classList.remove("text-red-500");
+            adminAssistant.classList.remove("text-red-500");
             break;
         case "BYC".toLowerCase():
         case "BYC".toUpperCase():
             teamLeader.value = "CYS";
-            adminAssistant.value = "RXB";
+            adminAssistant.value = "AYF";
+            teamLeader.classList.remove("text-red-500");
+            adminAssistant.classList.remove("text-red-500");
             break;
         case "CZL".toLowerCase():
         case "CZL".toUpperCase():
             teamLeader.value = "CYS";
-            adminAssistant.value = "RXB";
+            adminAssistant.value = "AYF";
+            teamLeader.classList.remove("text-red-500");
+            adminAssistant.classList.remove("text-red-500");
             break;
         case "JNT".toLowerCase():
         case "JNT".toUpperCase():
             teamLeader.value = "CYS";
-            adminAssistant.value = "RXB";
+            adminAssistant.value = "AYF";
+            teamLeader.classList.remove("text-red-500");
+            adminAssistant.classList.remove("text-red-500");
             break;
         case "RXA".toLowerCase():
         case "RXA".toUpperCase():
             teamLeader.value = "CYS";
-            adminAssistant.value = "RXB";
+            adminAssistant.value = "AYF";
+            teamLeader.classList.remove("text-red-500");
+            adminAssistant.classList.remove("text-red-500");
             break;
         case "SXH".toLowerCase():
         case "SXH".toUpperCase():
             teamLeader.value = "ARD";
             adminAssistant.value = "RXW";
+            teamLeader.classList.remove("text-red-500");
+            adminAssistant.classList.remove("text-red-500");
             break;
         case "JML".toLowerCase():
         case "JML".toUpperCase():
             teamLeader.value = "CYS";
-            adminAssistant.value = "SWH";
+            adminAssistant.value = "AYF";
+            teamLeader.classList.remove("text-red-500");
+            adminAssistant.classList.remove("text-red-500");
             break;
         default:
             teamLeader.value = "Incorrect Initials of Paralegal";
