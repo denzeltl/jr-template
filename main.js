@@ -54,11 +54,21 @@ const loanPurpose = document.getElementById("loan-purpose");
 const borrowerOneName = document.getElementById("borrower-1-name");
 const borrowerOneAddress = document.getElementById("borrower-1-address");
 const borrowersList = document.getElementById("borrowers-ul");
+const mortgageList = document.querySelectorAll(".mortgage-list");
 const borrowersArray = borrowersList.children;
 const addBorrower = document.getElementById("add-borrower-btn");
+const addMortgage = document.querySelectorAll(".add-mortgage-btn");
+const addSecurity = document.getElementById("add-security-btn");
+const unregisteredProposed = document.querySelectorAll(
+    ".unregistered-proposed"
+);
+const clearTitle = document.querySelectorAll(".clear-title");
 
 // title search input
-document.getElementById("select-state").addEventListener("change", selectState);
+const states = document.querySelectorAll(".select-state");
+const qldState = document.querySelectorAll(".if-qld");
+const nswState = document.querySelectorAll(".if-nsw");
+const vicSaTasState = document.querySelectorAll(".if-vic-sa-tas");
 
 // cos input
 
@@ -102,6 +112,32 @@ for (let i = 0; i < upDownArrow.length; i++) {
 
 addBorrower.addEventListener("click", addAnotherBorrower);
 
+addSecurity.addEventListener("click", addSecurityBtn);
+
+document
+    .getElementById("delete-security-2")
+    .addEventListener("click", function() {
+        if (confirm("Remove Security?"))
+            document.getElementById("security-2").classList.add("hidden");
+    });
+
+document
+    .getElementById("delete-security-3")
+    .addEventListener("click", function() {
+        if (confirm("Remove Security?"))
+            document.getElementById("security-3").classList.add("hidden");
+        document.getElementById("delete-security-2").classList.remove("hidden");
+    });
+
+document
+    .getElementById("delete-security-4")
+    .addEventListener("click", function() {
+        if (confirm("Remove Security?"))
+            document.getElementById("security-4").classList.add("hidden");
+        document.getElementById("delete-security-3").classList.remove("hidden");
+        addSecurity.classList.remove("hidden");
+    });
+
 // general tab logic
 matterNumber.addEventListener("blur", pasteMatterNumber);
 radioEmail.addEventListener("change", emailRadio);
@@ -120,6 +156,33 @@ document
 
 // security tab logic
 borrowersList.addEventListener("click", removeBorrower);
+for (let i = 0; i < states.length; i++) {
+    states[i].addEventListener("change", selectTheState);
+}
+for (let i = 0; i < unregisteredProposed.length; i++) {
+    unregisteredProposed[i].addEventListener(
+        "change",
+        toggleUnregisteredProposed
+    );
+    function toggleUnregisteredProposed(e) {
+        if ((unregisteredProposed[i].checked = true)) {
+            unregisteredProposed[i].nextElementSibling.classList.toggle(
+                "hidden"
+            );
+        }
+    }
+}
+for (let i = 0; i < clearTitle.length; i++) {
+    clearTitle[i].addEventListener("change", toggleClearTitle);
+    function toggleClearTitle(e) {
+        if ((clearTitle[i].checked = true)) {
+            clearTitle[i].nextElementSibling.classList.toggle("hidden");
+            clearTitle[
+                i
+            ].nextElementSibling.nextElementSibling.classList.toggle("hidden");
+        }
+    }
+}
 
 // FUNCTIONS
 
@@ -227,6 +290,32 @@ function arrowUpDown(e) {
     }
 }
 
+function addSecurityBtn(e) {
+    if (
+        document.getElementById("security-2").classList.contains("hidden") &&
+        document.getElementById("security-3").classList.contains("hidden") &&
+        document.getElementById("security-4").classList.contains("hidden")
+    ) {
+        document.getElementById("security-2").classList.remove("hidden");
+        document.getElementById("delete-security-2").classList.remove("hidden");
+    } else if (
+        document.getElementById("security-3").classList.contains("hidden") &&
+        document.getElementById("security-4").classList.contains("hidden")
+    ) {
+        document.getElementById("security-3").classList.remove("hidden");
+        document.getElementById("delete-security-2").classList.add("hidden");
+        document.getElementById("delete-security-3").classList.remove("hidden");
+    } else if (
+        document.getElementById("security-4").classList.contains("hidden")
+    ) {
+        document.getElementById("security-4").classList.remove("hidden");
+        e.target.classList.add("hidden");
+        document.getElementById("delete-security-2").classList.add("hidden");
+        document.getElementById("delete-security-3").classList.add("hidden");
+        document.getElementById("delete-security-4").classList.remove("hidden");
+    }
+}
+
 // functions for general tab
 function pasteMatterNumber(e) {
     mainHeader.textContent = e.target.value;
@@ -314,31 +403,112 @@ function removeBorrower(e) {
     }
 }
 
+for (let i = 0; i < addMortgage.length; i++) {
+    addMortgage[i].addEventListener("click", function addAnotherMortgage(e) {
+        // create elements
+        const li = document.createElement("li");
+        const label = document.createElement("label");
+        const span = document.createElement("span");
+        const inputName = document.createElement("input");
+        const inputAddress = document.createElement("input");
+        // create attributes
+        const input = document.createAttribute("input");
+        input.value = "text";
+        const placeholderName = document.createAttribute("placeholder");
+        placeholderName.value = "Mortgage Number";
+        const input1 = document.createAttribute("input");
+        input1.value = "text";
+        const placeholderAddress = document.createAttribute("placeholder");
+        placeholderAddress.value = "Mortgagee";
+
+        // logic
+        label.className = "block text-sm font-semibold mt-4";
+        label.appendChild(document.createTextNode("Mortgage"));
+        span.className =
+            "float-right cursor-pointer text-gray-600 hover:text-gray-700 pr-1";
+        span.appendChild(document.createTextNode("x"));
+        inputName.className =
+            "bg-gray-200 rounded w-full py-1 px-2 focus:outline-none focus:bg-white";
+        inputName.setAttributeNode(input);
+        inputName.setAttributeNode(placeholderName);
+        inputAddress.className =
+            "bg-gray-200 rounded w-full py-1 px-2 focus:outline-none focus:bg-white";
+        inputAddress.setAttributeNode(input1);
+        inputAddress.setAttributeNode(placeholderAddress);
+
+        // append child
+        li.appendChild(label);
+        label.appendChild(span);
+        li.appendChild(inputName);
+        li.appendChild(inputAddress);
+
+        mortgageList[i].appendChild(li);
+    });
+}
+
+for (let i = 0; i < mortgageList.length; i++) {
+    mortgageList[i].addEventListener("click", function removeMortgage(e) {
+        if (e.target.classList.contains("float-right")) {
+            if (confirm("Remove Mortgage?")) {
+                const li = e.target.parentElement.parentElement;
+
+                mortgageList[i].removeChild(li);
+            }
+        }
+    });
+}
+
 // states select option
-function selectState(e) {
+function selectTheState(e) {
     switch (e.target.value) {
         case "default-state":
-            document.getElementById("if-qld").classList.add("hidden");
-            document.getElementById("if-nsw").classList.add("hidden");
-            document.getElementById("if-vic-sa-tas").classList.add("hidden");
+            e.target.parentElement.nextElementSibling.nextElementSibling.nextElementSibling.classList.add(
+                "hidden"
+            );
+            e.target.parentElement.parentElement.nextElementSibling.classList.add(
+                "hidden"
+            );
+            e.target.parentElement.parentElement.nextElementSibling.nextElementSibling.classList.add(
+                "hidden"
+            );
             break;
         case "qld-state":
-            document.getElementById("if-qld").classList.remove("hidden");
-            document.getElementById("if-nsw").classList.add("hidden");
-            document.getElementById("if-vic-sa-tas").classList.add("hidden");
+            e.target.parentElement.nextElementSibling.nextElementSibling.nextElementSibling.classList.remove(
+                "hidden"
+            );
+            e.target.parentElement.parentElement.nextElementSibling.classList.add(
+                "hidden"
+            );
+            e.target.parentElement.parentElement.nextElementSibling.nextElementSibling.classList.add(
+                "hidden"
+            );
             break;
         case "nsw-state":
-            document.getElementById("if-nsw").classList.remove("hidden");
-            document.getElementById("if-qld").classList.add("hidden");
-            document.getElementById("if-vic-sa-tas").classList.add("hidden");
+            e.target.parentElement.nextElementSibling.nextElementSibling.nextElementSibling.classList.add(
+                "hidden"
+            );
+            e.target.parentElement.parentElement.nextElementSibling.classList.remove(
+                "hidden"
+            );
+            e.target.parentElement.parentElement.nextElementSibling.nextElementSibling.classList.add(
+                "hidden"
+            );
             break;
         case "vic-state":
         case "sa-state":
         case "tas-state":
-            document.getElementById("if-vic-sa-tas").classList.remove("hidden");
-            document.getElementById("if-qld").classList.add("hidden");
-            document.getElementById("if-nsw").classList.add("hidden");
+            e.target.parentElement.nextElementSibling.nextElementSibling.nextElementSibling.classList.add(
+                "hidden"
+            );
+            e.target.parentElement.parentElement.nextElementSibling.classList.add(
+                "hidden"
+            );
+            e.target.parentElement.parentElement.nextElementSibling.nextElementSibling.classList.remove(
+                "hidden"
+            );
             break;
+        default:
+            console.log(1);
     }
 }
 
