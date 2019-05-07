@@ -462,48 +462,48 @@ for (let i = 0; i < mortgageList.length; i++) {
 function selectTheState(e) {
     switch (e.target.value) {
         case "default-state":
-            e.target.parentElement.nextElementSibling.nextElementSibling.nextElementSibling.classList.add(
+            e.target.parentElement.nextElementSibling.nextElementSibling.nextElementSibling.children[0].classList.add(
                 "hidden"
             );
-            e.target.parentElement.parentElement.nextElementSibling.classList.add(
+            e.target.parentElement.nextElementSibling.nextElementSibling.nextElementSibling.children[1].classList.add(
                 "hidden"
             );
-            e.target.parentElement.parentElement.nextElementSibling.nextElementSibling.classList.add(
+            e.target.parentElement.nextElementSibling.nextElementSibling.nextElementSibling.children[2].classList.add(
                 "hidden"
             );
             break;
         case "qld-state":
-            e.target.parentElement.nextElementSibling.nextElementSibling.nextElementSibling.classList.remove(
+            e.target.parentElement.nextElementSibling.nextElementSibling.nextElementSibling.children[0].classList.remove(
                 "hidden"
             );
-            e.target.parentElement.parentElement.nextElementSibling.classList.add(
+            e.target.parentElement.nextElementSibling.nextElementSibling.nextElementSibling.children[1].classList.add(
                 "hidden"
             );
-            e.target.parentElement.parentElement.nextElementSibling.nextElementSibling.classList.add(
+            e.target.parentElement.nextElementSibling.nextElementSibling.nextElementSibling.children[2].classList.add(
                 "hidden"
             );
             break;
         case "nsw-state":
-            e.target.parentElement.nextElementSibling.nextElementSibling.nextElementSibling.classList.add(
+            e.target.parentElement.nextElementSibling.nextElementSibling.nextElementSibling.children[0].classList.add(
                 "hidden"
             );
-            e.target.parentElement.parentElement.nextElementSibling.classList.remove(
+            e.target.parentElement.nextElementSibling.nextElementSibling.nextElementSibling.children[1].classList.remove(
                 "hidden"
             );
-            e.target.parentElement.parentElement.nextElementSibling.nextElementSibling.classList.add(
+            e.target.parentElement.nextElementSibling.nextElementSibling.nextElementSibling.children[2].classList.add(
                 "hidden"
             );
             break;
         case "vic-state":
         case "sa-state":
         case "tas-state":
-            e.target.parentElement.nextElementSibling.nextElementSibling.nextElementSibling.classList.add(
+            e.target.parentElement.nextElementSibling.nextElementSibling.nextElementSibling.children[0].classList.add(
                 "hidden"
             );
-            e.target.parentElement.parentElement.nextElementSibling.classList.add(
+            e.target.parentElement.nextElementSibling.nextElementSibling.nextElementSibling.children[1].classList.add(
                 "hidden"
             );
-            e.target.parentElement.parentElement.nextElementSibling.nextElementSibling.classList.remove(
+            e.target.parentElement.nextElementSibling.nextElementSibling.nextElementSibling.children[2].classList.remove(
                 "hidden"
             );
             break;
@@ -525,7 +525,7 @@ function authorLeadAndAss(e) {
         case "CYS".toLowerCase():
         case "CYS".toUpperCase():
             teamLeader.value = "   ";
-            adminAssistant.value = "RXB";
+            adminAssistant.value = "AYF";
             teamLeader.classList.remove("text-red-500");
             adminAssistant.classList.remove("text-red-500");
             break;

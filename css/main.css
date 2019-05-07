@@ -34,7 +34,7 @@
 
 /* Checked state */
 .control input:checked ~ .control__indicator {
-    background: #a7a7a7;
+    background: #4a5568;
 }
 
 /* Disabled state */
