@@ -1,3 +1,3 @@
 # Jr Template
 
-View [here](https://denzeltl.github.io/template/)
+View [here](https://denzeltl.github.io/jr-template/)
